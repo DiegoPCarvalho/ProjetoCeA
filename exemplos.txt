@@ -1,0 +1,27 @@
+contrato:
+
+Aguardando chegar na zhaz
+aguardando vistoria
+aguardando aprovação
+aprovado( separação de peças )
+aguardando peças
+aprovado (aguardando Manutenção)
+Em Manutenção/Atendimento
+Manutenção Concluida
+Revisão
+Expedição e Faturamento
+Finalizada
+
+suporte remoto:
+
+manutenção corretiva:
+
+atendimento on-site:
+
+
+
+
+https://codepen.io/thecodefatherYT/pen/oNjowNq
+
+
+https://www.devmedia.com.br/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3/37205

@@ -1,0 +1,70 @@
+.menu-drop li {
+
+    list-style: none;
+}
+
+.menu-drop{
+    width: 150px;
+    height: auto;
+    background: #1A2F3A;
+    overflow: hidden;
+}
+
+.menu-drop .btn{
+    display:block;
+    padding: 1rem;
+    position: relative;
+}
+
+.menu-drop .submenu {
+    background: #1b1b2f;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .8s ease-out;
+}
+
+.menu-drop .submenu a{
+    display:block;
+    padding: 1rem;
+    position: relative;
+}
+
+.menu-drop .submenu a::before{
+    content:'';
+    display:block;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 5px;
+    background: #e43f5a;
+    opacity: 0;
+    transition: all .5s;
+}
+
+.menu-drop .submenu a:hover{
+    padding-left: calc(1rem + 5px);
+}
+
+.menu-drop .submenu a:hover::before{
+    opacity: 1;
+}
+
+.item:target .submenu{
+    max-height: 20rem;
+}
+
+
+@media(max-width: 768px){
+    .menu-drop{
+        display: none;
+    }
+
+  
+    
+   
+}
+
+
+
+

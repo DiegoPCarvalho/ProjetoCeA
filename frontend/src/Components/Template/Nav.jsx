@@ -1,6 +1,7 @@
 import './Nav.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import DropNav from '../Dropdowns/DropNav';
 
 export default props => 
     <aside className="menu-area">
@@ -8,15 +9,6 @@ export default props =>
             <Link to="/Dashboard">
                 <i className='fa fa-bar-chart fa-solid'></i> Dashboard
             </Link>
-            <div>
-                Contrato
-            </div>
-            <div>
-                Atendimento on-site
-            </div>
-            <div>
-                Manutenção Corretiva
-            </div>
-            
+            <DropNav />
        </nav>
     </aside>
