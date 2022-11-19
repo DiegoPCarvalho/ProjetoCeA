@@ -1,6 +1,6 @@
 contrato:
 
-Aguardando chegar na zhaz
+Aguardando Chegar na zhaz
 aguardando vistoria
 aguardando aprovação
 aprovado( separação de peças )

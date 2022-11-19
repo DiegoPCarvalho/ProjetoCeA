@@ -1,33 +1,46 @@
-.menu-drop li {
-
+ .menu-drop .item {
     list-style: none;
 }
 
 .menu-drop{
-    width: 150px;
+    width: 225px;
     height: auto;
     background: #1A2F3A;
     overflow: hidden;
 }
 
+.submenu {
+    height: auto;
+}
+.submenu a {
+    margin: 3px;
+    font-size: 15px;
+    height: 10px;
+}
+
 .menu-drop .btn{
-    display:block;
-    padding: 1rem;
+    display:flex;
     position: relative;
+   
 }
 
 .menu-drop .submenu {
+    display: flex;
+    flex-direction: column;
     background: #1b1b2f;
     overflow: hidden;
     max-height: 0;
     transition: max-height .8s ease-out;
+    font-size: small;
+
 }
 
 .menu-drop .submenu a{
-    display:block;
-    padding: 1rem;
+    display:flex;
     position: relative;
-}
+    align-items: center;
+    
+} 
 
 .menu-drop .submenu a::before{
     content:'';
@@ -37,34 +50,28 @@
     left:0;
     height: 100%;
     width: 5px;
-    background: #e43f5a;
+    background: red;
     opacity: 0;
     transition: all .5s;
-}
+} 
 
 .menu-drop .submenu a:hover{
     padding-left: calc(1rem + 5px);
-}
+} 
 
-.menu-drop .submenu a:hover::before{
+ .menu-drop .submenu a:hover::before{
     opacity: 1;
 }
 
 .item:target .submenu{
     max-height: 20rem;
-}
+} 
 
 
 @media(max-width: 768px){
     .menu-drop{
         display: none;
     }
-
-  
-    
-   
 }
-
-
 
 

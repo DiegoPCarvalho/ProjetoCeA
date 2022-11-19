@@ -9,11 +9,34 @@ aside.menu-area {
     display: block;
     text-decoration: none;
     color: white;
-    padding: 15px;
+    padding: 10px;
     font-weight: 300px;
 }
 
+.menu2 a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-weight: 300px;
+}
+
+.menu3 a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-weight: 300px;
+}
 .menu a:hover {
+    background: linear-gradient(135deg, #07a7e7 0%, #32dac3 100%);
+}
+
+.menu2 a:hover {
+    background: linear-gradient(135deg, #07a7e7 0%, #32dac3 100%);
+}
+
+.menu3 a:hover {
     background: linear-gradient(135deg, #07a7e7 0%, #32dac3 100%);
 }
 
