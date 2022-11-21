@@ -1,77 +1,98 @@
- .menu-drop .item {
-    list-style: none;
-}
-
-.menu-drop{
-    width: 225px;
-    height: auto;
-    background: #1A2F3A;
-    overflow: hidden;
-}
-
-.submenu {
-    height: auto;
-}
-.submenu a {
-    margin: 3px;
-    font-size: 15px;
-    height: 10px;
-}
-
-.menu-drop .btn{
-    display:flex;
-    position: relative;
-   
-}
-
-.menu-drop .submenu {
-    display: flex;
-    flex-direction: column;
-    background: #1b1b2f;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height .8s ease-out;
-    font-size: small;
-
-}
-
-.menu-drop .submenu a{
-    display:flex;
-    position: relative;
-    align-items: center;
-    
-} 
-
-.menu-drop .submenu a::before{
-    content:'';
-    display:block;
-    position: absolute;
-    top:0;
-    left:0;
-    height: 100%;
+#accordian::-webkit-scrollbar {
     width: 5px;
-    background: red;
-    opacity: 0;
-    transition: all .5s;
-} 
-
-.menu-drop .submenu a:hover{
-    padding-left: calc(1rem + 5px);
-} 
-
- .menu-drop .submenu a:hover::before{
-    opacity: 1;
+    height: 8px;
+}
+#accordian::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #e4e4e4;
+}
+#accordian::-webkit-scrollbar-thumb {
+    background: #0089ff;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+#accordian::-webkit-scrollbar-thumb:hover {
+    background: #d5b14c;
+    transition: 0.5s;
 }
 
-.item:target .submenu{
-    max-height: 20rem;
-} 
+/* --------- */
 
+#accordian {
+	background: var(--bg-dark);
+	width: 225px;
+	padding: 10px;
+	float: left;
+	height: auto;
+	overflow-x: hidden;
+    overflow-y: hidden;
+}
 
-@media(max-width: 768px){
-    .menu-drop{
-        display: none;
-    }
+i {
+	margin-right: 5px;
+}
+
+#accordian li {
+	list-style-type: none;
+}
+
+#accordian ul li a{
+	color: #9c9c9c;
+	text-decoration: none;
+	font-size: 15px;
+	display: block;
+	padding: 12px 15px;
+	transition: all 0.15s;
+	position: relative;
+	border-radius: 3px;
+}
+
+#accordian>ul.show-dropdown>li.active>a,
+#accordian>ul>li>ul.show-dropdown>li.active>a,
+#accordian>ul>li>ul>li>ul.show-dropdown>li.active>a,
+#accordian>ul>li>ul>li>ul>li>ul.show-dropdown>li.active>a,
+#accordian>ul>li>ul>li>ul>li>ul>li>ul.show-dropdown>li.active>a{
+    background: linear-gradient(135deg, #07a7e7 0%, #32dac3 100%);
+    color: white;
+    box-shadow: 0px 1px 2px rgba(0, 137, 255, 0.2);
+}
+
+#accordian>ul>li>ul,
+#accordian>ul>li>ul>li>ul,
+#accordian>ul>li>ul>li>ul>li>ul,
+#accordian>ul>li>ul>li>ul>li>ul>li>ul {
+	display: none;
 }
 
 
+#accordian>ul>li.active>ul.show-dropdown,
+#accordian>ul>li>ul>li.active>ul.show-dropdown,
+#accordian>ul>li>ul>li>ul>li.active>ul.show-dropdown,
+#accordian>ul>li>ul>li>ul>li>ul>li.active>ul.show-dropdown {
+	display: block;
+}
+
+#accordian>ul>li>ul,
+#accordian>ul>li>ul>li>ul,
+#accordian>ul>li>ul>li>ul>li>ul,
+#accordian>ul>li>ul>li>ul>li>ul>li>ul {
+	padding-left: 20px;
+}
+
+#accordian a:not(:only-child):after {
+	content:"\f105";
+    position: absolute;
+    right: 20px;
+    top: 14px;
+    font-size: 15px;
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    transition: 0.5s;
+}
+
+#accordian .active>a:not(:only-child):after {
+		transform: rotate(90deg);
+}

@@ -25,3 +25,332 @@ https://codepen.io/thecodefatherYT/pen/oNjowNq
 
 
 https://www.devmedia.com.br/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3/37205
+
+
+
+
+/* #accordian {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    background-color: var(--bg-dark);
+    width: 225px;
+    margin: 50px auto 0 auto;
+    color: white;
+    box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.6), 0 0 200px 1px rgba(255, 255, 255, 0.5); 
+    height: auto;
+}
+
+#accordian h3 {
+    background-color: var(--bg-dark);
+     background: linear-gradient(#c6d4d8, #002535); 
+    margin-left: 0px;
+}
+
+#accordian ul {
+    height: 100%;
+    width: 100%;
+}
+#accordian h3 {
+    width: 100%;
+    margin-left: 0px;
+}
+
+#accordian h3 a {
+    width: 100%;
+    font-size: 12px;
+    line-height: 34px;
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+#accordian h3:hover {
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
+}
+
+i {
+    margin-right: 10px;
+}
+
+#accordian li {
+    list-style-type: none;
+}
+
+#accordian ul ul li a,
+#accordian h4 {
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    line-height: 27px;
+    display: block;
+    margin: 0px;
+    transition: all 0.15s;
+    position: relative;
+}
+
+#accordian ul ul li a:hover {
+    background: #003545;
+    border-left: 5px solid lightgreen;
+}
+
+#accordian ul ul {
+    display: none;
+}
+
+#accordian li.active>ul {
+    display: block;
+}
+
+#accordian ul ul ul {
+    margin-left: 15px;
+    border-left: 1px dotted rgba(0, 0, 0, 0.5);
+} 
+
+#accordian a:not(:only-child):after {
+    content: "\f104";
+    font-family: fontawesome;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 14px;
+}
+
+#accordian .active>a:not(:only-child):after {
+    content: "\f107";
+} */
+
+
+drop nav
+
+ .menu-drop .item {
+    list-style: none;
+}
+
+.menu-drop{
+    width: 225px;
+    height: auto;
+    background: #1A2F3A;
+    overflow: hidden;
+}
+
+.submenu {
+    height: auto;
+}
+.submenu a {
+    margin: 3px;
+    font-size: 15px;
+    height: 10px;
+}
+
+.menu-drop .btn{
+    display:flex;
+    position: relative;
+   
+}
+
+.menu-drop .submenu {
+    display: flex;
+    flex-direction: column;
+    background: #1b1b2f;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .8s ease-out;
+    font-size: small;
+
+}
+
+.menu-drop .submenu a{
+    display:flex;
+    position: relative;
+    align-items: center;
+    
+} 
+
+.menu-drop .submenu a::before{
+    content:'';
+    display:block;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 5px;
+    background: red;
+    opacity: 0;
+    /* transition: all .5s; */
+} 
+
+.menu-drop .submenu a:hover{
+    padding-left: calc(1rem + 5px);
+} 
+
+ .menu-drop .submenu a:hover::before{
+    opacity: 1;
+}
+
+.item:target .submenu{
+    max-height: 20rem;
+} 
+
+
+@media(max-width: 768px){
+    .menu-drop{
+        display: none;
+    }
+}
+
+
+// import React from "react";
+import React from 'react';
+import './DropNav.css';
+
+
+
+export default props =>
+    <div className='menu-drop'>
+        <li className='item' id="mn1">
+            <a className="btn" href="#mn1">
+                <i className='fa fa-university fa-solid mx-1'></i>Ordem de Serviço Contrato
+            </a>
+            <div className="submenu">
+                <a href="#mn2">Aguardando Chegar</a>
+                <a href="#">Aguardando Vistoria</a>
+                <a href="#">Aguardando Aprovação</a>
+                <a href="#">Aprovado - Separação</a>
+                <a href="#">Aguardando Peças</a>
+                <a href="#">Aprovado - Manutenção</a>
+                <a href="#">Em Manutenção</a>
+                <a href="#">Manutenção Concluída</a>
+                <a href="#">Revisão</a>
+                <a href="#">Expedição</a>
+                <a href="#">Finalizada</a>
+            </div>
+        </li>
+        <li className='item' id="mn2">
+            <a className="btn" href="#mn2">
+                <i className='fa fa-info-circle fa-solid mx-1'></i> Ordem de Serviço Suporte Remoto
+            </a>
+            <div className="submenu">
+                <a href="#">Abertura de Suporte</a>
+                <a href="#">Aguardando Vistoria</a>
+                <a href="#">Em Atendimento</a>
+                <a href="#">Manutenção Concluída</a>
+                <a href="#">Expedição</a>
+                <a href="#">Finalizada</a>
+            </div>
+        </li>
+        <li className='item' id="mn3">
+            <a className="btn" href="#mn3">
+                <i className='fa fa-plane fa-solid mx-1'></i>Ordem de Serviço Atendimento On-site
+            </a>
+            <div className="submenu">
+                <a href="#">Aguardando Vistoria</a>
+                <a href="#">Vistoriado</a>
+                <a href="#">Aguardando Peças</a>
+                <a href="#">Aprovado - Manutenção</a>
+                <a href="#">Expedição</a>
+                <a href="#">Finalizada</a>
+            </div>
+        </li>
+        <li className='item' id="mn4">
+            <a className="btn" href="#mn4">
+                <i className='fa fa-fort-awesome fa-solid mx-1'> </i>Ordem de Serviço Manutenção Corretiva
+            </a>
+            <div className="submenu">
+                <a href="#">Aguardando Vistoria</a>
+                <a href="#">Em Vistoria</a>
+                <a href="#">Vistoriado</a>
+                <a href="#">Aguardando Aprovação</a>
+                <a href="#">Aprovado - Separação</a>
+                <a href="#">Aguardando Peças</a>
+                <a href="#">Aprovado - Manutenção</a>
+                <a href="#">Em Manutenção</a>
+                <a href="#">Manutenção Concluída</a>
+                <a href="#">Revisão</a>
+                <a href="#">Expedição</a>
+                <a href="/Home">Finalizada</a>
+            </div>
+        </li>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <div class="menu-drop">
+<li class="item" id="mn1">
+    <a class="btn" href="#mn1">
+        <i className='fa fa-university fa-solid mx-2'></i>Contrato
+    </a>
+    <div class="submenu">
+        <a href="#">Aguardando Chegar</a>
+        <a href="#">Aguardando Vistoria</a>
+        <a href="#">Aguardando Aprovação</a>
+        <a href="#">Aprovado - Separação</a>
+        <a href="#">Aguardando Peças</a>
+        <a href="#">Aprovado - Manutenção</a>
+        <a href="#">Em Manutenção</a>
+        <a href="#">Manutenção Concluída</a>
+        <a href="#">Revisão</a>
+        <a href="#">Expedição</a>
+        <a href="#">Finalizada</a>
+    </div>
+</li>
+<li class="item" id="mn2">
+    <a class="btn" href="#mn2">Dosyalar</a>
+    <div class="submenu">
+    <a href="#">Aguardando Chegar</a>
+        <a href="#">Aguardando Vistoria</a>
+        <a href="#">Aguardando Aprovação</a>
+        <a href="#">Aprovado - Separação</a>
+        <a href="#">Aguardando Peças</a>
+        <a href="#">Aprovado - Manutenção</a>
+        <a href="#">Em Manutenção</a>
+        <a href="#">Manutenção Concluída</a>
+        <a href="#">Revisão</a>
+        <a href="#">Expedição</a>
+        <a href="#">Finalizada</a>
+    </div>
+</li>
+<li class="item" id="mn3">
+    <a class="btn" href="#mn3">Ayarlar</a>
+    <div class="submenu">
+        <a href="#">Kullanıcı Ayarları</a>
+        <a href="#">Dosya Ayarları</a>
+        <a href="#">Şifre</a>
+    </div>
+</li>
+<li class="item" id="mn4">
+    <a class="btn" href="#mn4">Ayarlar</a>
+    <div class="submenu">
+        <a href="#">Kullanıcı Ayarları</a>
+        <a href="#">Dosya Ayarları</a>
+        <a href="#">Şifre</a>
+    </div>
+</li>
+</div>
+
+
+     */}
+

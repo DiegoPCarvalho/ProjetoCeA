@@ -1,153 +1,136 @@
-// import React from "react";
-import React from 'react';
+import React from "react";
 import './DropNav.css';
-
-
+import $ from  "jquery";
+import { Link } from 'react-router-dom';
 
 export default props =>
-    <div className='menu-drop'>
-        <li className='item' id="mn1">
-            <a className="btn" href="#mn1">
-                <i className='fa fa-university fa-solid mx-1'></i>Ordem de Serviço Contrato
-            </a>
-            <div className="submenu">
-                <a href="#">Aguardando Chegar</a>
-                <a href="#">Aguardando Vistoria</a>
-                <a href="#">Aguardando Aprovação</a>
-                <a href="#">Aprovado - Separação</a>
-                <a href="#">Aguardando Peças</a>
-                <a href="#">Aprovado - Manutenção</a>
-                <a href="#">Em Manutenção</a>
-                <a href="#">Manutenção Concluída</a>
-                <a href="#">Revisão</a>
-                <a href="#">Expedição</a>
-                <a href="#">Finalizada</a>
-            </div>
-        </li>
-        <li className='item' id="mn2">
-            <a className="btn" href="#mn2">
-                <i className='fa fa-info-circle fa-solid mx-1'></i> Ordem de Serviço Suporte Remoto
-            </a>
-            <div className="submenu">
-                <a href="#">Abertura de Suporte</a>
-                <a href="#">Aguardando Vistoria</a>
-                <a href="#">Em Atendimento</a>
-                <a href="#">Manutenção Concluída</a>
-                <a href="#">Expedição</a>
-                <a href="#">Finalizada</a>
-            </div>
-        </li>
-        <li className='item' id="mn3">
-            <a className="btn" href="#mn3">
-                <i className='fa fa-plane fa-solid mx-1'></i>Ordem de Serviço Atendimento On-site
-            </a>
-            <div className="submenu">
-                <a href="#">Aguardando Vistoria</a>
-                <a href="#">Vistoriado</a>
-                <a href="#">Aguardando Peças</a>
-                <a href="#">Aprovado - Manutenção</a>
-                <a href="#">Expedição</a>
-                <a href="#">Finalizada</a>
-            </div>
-        </li>
-        <li className='item' id="mn4">
-            <a className="btn" href="#mn4">
-                <i className='fa fa-fort-awesome fa-solid mx-1'> </i>Ordem de Serviço Manutenção Corretiva
-            </a>
-            <div className="submenu">
-                <a href="#">Aguardando Vistoria</a>
-                <a href="#">Em Vistoria</a>
-                <a href="#">Vistoriado</a>
-                <a href="#">Aguardando Aprovação</a>
-                <a href="#">Aprovado - Separação</a>
-                <a href="#">Aguardando Peças</a>
-                <a href="#">Aprovado - Manutenção</a>
-                <a href="#">Em Manutenção</a>
-                <a href="#">Manutenção Concluída</a>
-                <a href="#">Revisão</a>
-                <a href="#">Expedição</a>
-                <a href="/Home">Finalizada</a>
-            </div>
-        </li>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/* <div class="menu-drop">
-<li class="item" id="mn1">
-    <a class="btn" href="#mn1">
-        <i className='fa fa-university fa-solid mx-2'></i>Contrato
-    </a>
-    <div class="submenu">
-        <a href="#">Aguardando Chegar</a>
-        <a href="#">Aguardando Vistoria</a>
-        <a href="#">Aguardando Aprovação</a>
-        <a href="#">Aprovado - Separação</a>
-        <a href="#">Aguardando Peças</a>
-        <a href="#">Aprovado - Manutenção</a>
-        <a href="#">Em Manutenção</a>
-        <a href="#">Manutenção Concluída</a>
-        <a href="#">Revisão</a>
-        <a href="#">Expedição</a>
-        <a href="#">Finalizada</a>
-    </div>
-</li>
-<li class="item" id="mn2">
-    <a class="btn" href="#mn2">Dosyalar</a>
-    <div class="submenu">
-    <a href="#">Aguardando Chegar</a>
-        <a href="#">Aguardando Vistoria</a>
-        <a href="#">Aguardando Aprovação</a>
-        <a href="#">Aprovado - Separação</a>
-        <a href="#">Aguardando Peças</a>
-        <a href="#">Aprovado - Manutenção</a>
-        <a href="#">Em Manutenção</a>
-        <a href="#">Manutenção Concluída</a>
-        <a href="#">Revisão</a>
-        <a href="#">Expedição</a>
-        <a href="#">Finalizada</a>
-    </div>
-</li>
-<li class="item" id="mn3">
-    <a class="btn" href="#mn3">Ayarlar</a>
-    <div class="submenu">
-        <a href="#">Kullanıcı Ayarları</a>
-        <a href="#">Dosya Ayarları</a>
-        <a href="#">Şifre</a>
-    </div>
-</li>
-<li class="item" id="mn4">
-    <a class="btn" href="#mn4">Ayarlar</a>
-    <div class="submenu">
-        <a href="#">Kullanıcı Ayarları</a>
-        <a href="#">Dosya Ayarları</a>
-        <a href="#">Şifre</a>
-    </div>
-</li>
+<div id="accordian">
+<ul className="show-dropdown">
+    <li>
+        <Link to="/Dashboard" className='text-light'><i className="fa fa-bar-chart"></i>Dashboard</Link>
+    </li>
+    <li>
+        <a href="javascript:void(0);" className='text-light'><i className="fa fa-clone"></i>Components</a>
+        <ul>
+            <li><a href="javascript:void(0);" className='text-light'>Today's tasks</a></li>
+            <li>
+                <a href="javascript:void(0);" className='text-light'>DrillDown (active)</a>
+                <ul class="show-dropdown">
+                    <li><a href="javascript:void(0);" className='text-light'>Today's tasks</a></li>
+                    <li class="active"><a href="javascript:void(0);" className='text-light'>Urgent</a></li>
+                    <li>
+                        <a href="javascript:void(0);" className='text-light'>Overdues</a>
+                        <ul>
+                            <li><a href="javascript:void(0);" className='text-light'>Today's tasks</a></li>
+                            <li><a href="javascript:void(0);" className='text-light'>Urgent</a></li>
+                            <li><a href="javascript:void(0);" className='text-light'>Overdues</a></li>
+                            <li><a href="javascript:void(0);" className='text-light'>Recurring</a></li>
+                            <li>
+                                <a href="javascript:void(0);" className='text-light'>Calendar</a>
+                                <ul>
+                                    <li><a href="javascript:void(0);" className='text-light'>Current Month</a></li>
+                                    <li><a href="javascript:void(0);" className='text-light'>Current Week</a></li>
+                                    <li><a href="javascript:void(0);" className='text-light'>Previous Month</a></li>
+                                    <li><a href="javascript:void(0);" className='text-light'>Previous Week</a></li>
+                                    <li><a href="javascript:void(0);" className='text-light'>Next Month</a></li>
+                                    <li><a href="javascript:void(0);" className='text-light'>Next Week</a></li>
+                                    <li><a href="javascript:void(0);" className='text-light'>Team Calendar</a></li>
+                                    <li><a href="javascript:void(0);" className='text-light'>Private Calendar</a></li>
+                                    <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" className='text-light'>Recurring</a></li>
+                    <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);" className='text-light'>Overdues</a>
+                <ul>
+                    <li><a href="javascript:void(0);" className='text-light'>Today's tasks</a></li>
+                    <li><a href="javascript:void(0);" className='text-light'>Urgent</a></li>
+                    <li><a href="javascript:void(0);" className='text-light'>Overdues</a></li>
+                    <li><a href="javascript:void(0);" className='text-light'>Recurring</a></li>
+                    <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0);" className='text-light'>Recurring</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="javascript:void(0);" className='text-light'><i class="fa fa-address-book"></i>Address Book</a>
+        <ul>
+            <li><a href="javascript:void(0);" className='text-light'>Reports</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Search</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Graphs</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="javascript:void(0);" className='text-light'><i className="fa fa-calendar"></i>Calendar</a>
+        <ul>
+            <li><a href="javascript:void(0);" className='text-light'>Current Month</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Current Week</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Previous Month</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Previous Week</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Next Month</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Next Week</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Team Calendar</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Private Calendar</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="javascript:void(0);" className='text-light'><i className="fa fa-user"></i>Charts</a>
+        <ul>
+            <li><a href="javascript:void(0);" className='text-light'>Global favs</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>My favs</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Team favs</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
+        </ul>
+    </li>
+</ul>
 </div>
 
+$(document).ready(function() {
+    $("#accordian a").click(function() {
+        var link = $(this);
+        var closest_ul = link.closest("ul");
+        var parallel_active_links = closest_ul.find(".active")
+        var closest_li = link.closest("li");
+        var link_status = closest_li.hasClass("active");
+        var count = 0;
 
-     */}
+        closest_ul.find("ul").slideUp(function() {
+            if (++count == closest_ul.find("ul").length){
+                parallel_active_links.removeClass("active");
+                parallel_active_links.children("ul").removeClass("show-dropdown");
+            }
+        });
+
+        if (!link_status) {
+            closest_li.children("ul").slideDown().addClass("show-dropdown");
+            closest_li.parent().parent("li.active").find('ul').find("li.active").removeClass("active");
+            link.parent().addClass("active");
+        }
+    })
+});
+
+
+// --------for-active-class-on-other-page-----------
+$(document).ready(function($){
+  	// Get current path and find target link
+  	var path = window.location.pathname.split("/").pop();
+  
+  	// Account for home page with empty path
+  	if ( path == '' ) {
+    	path = 'index.html';
+  	}
+     
+  	var target = $('#accordian li a[href="'+path+'"]');
+  	// Add active class to target link
+  	target.parents("li").addClass('active');
+  	target.parents("ul").addClass("show-dropdown");
+});

@@ -1,34 +1,75 @@
-.menu{
-    list-style:none;
-    float:left;
+.menu-droping .item {
+    list-style: none;
 }
 
-.menu li{
-    position:relative;
-    float:left;
- }
+.menu-droping{
+    width: 225px;
+    height: auto;
+    background: #1A2F3A;
+    overflow: hidden;
+}
 
- .menu li a{color:white; text-decoration:none; padding:5px 10px; display:block;}
+.sub-menu-drop {
+    height: auto;
+}
 
- .menu li  ul{
-    position:absolute;
-    top:25px;
-    left:0;
+.sub-menu-drop a {
+    margin: 3px;
+    font-size: 15px;
+    height: 10px;
+}
+
+.menu-droping .menu-toggle{
+    display:flex;
+    position: relative;
+   
+}
+
+.menu-droping .sub-menu-drop {
+    display: flex;
+    flex-direction: column;
+    background: #1b1b2f;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .8s ease-out;
+    font-size: small;
+
+}
+
+.menu-toggle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    float: right;
+    color: #eee;
     background-color: var(--bg-dark);
-    display:none;
+    border: solid 1px #777;
+    border-radius: 5px;
+    height: 40px;
+    width: 50PX;
 }
 
-.menu li:hover ul, .menu li.over ul{display:block;}
-
-.menu li ul li{
+.menu-droping .sub-menu-drop a::before{
+    content:'';
     display:block;
-    width:150px;
- }
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 5px;
+    background: red;
+    opacity: 0;
+    transition: all .5s;
+} 
 
-/* 
- @media(max-width: 576px){
-    .menu-drop2{
-        list-style:none;
-        float:left;
-    }
- } */
+.menu-droping .sub-menu-drop a:hover{
+    padding-left: calc(1rem + 5px);
+} 
+
+.menu-droping .sub-menu-drop a:hover::before{
+    opacity: 1;
+}
+.item:target .submenu{
+    max-height: 20rem;
+} 
