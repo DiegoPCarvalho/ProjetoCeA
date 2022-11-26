@@ -274,30 +274,6 @@ export default props =>
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {/* <div class="menu-drop">
 <li class="item" id="mn1">
     <a class="btn" href="#mn1">
@@ -354,3 +330,458 @@ export default props =>
 
      */}
 
+
+
+
+MENU ARCODION
+
+#accordian::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+}
+#accordian::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #e4e4e4;
+}
+#accordian::-webkit-scrollbar-thumb {
+    background: #0089ff;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+#accordian::-webkit-scrollbar-thumb:hover {
+    background: #d5b14c;
+    transition: 0.5s;
+}
+
+/* --------- */
+
+#accordian {
+	background: var(--bg-dark);
+	width: 270px;
+	padding: 5px;
+	float: left;
+	height: auto;
+	overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+i {
+	margin-right: 5px;
+}
+
+#accordian li {
+	list-style-type: none;
+}
+
+#accordian ul li a{
+	color: #9c9c9c;
+	text-decoration: none;
+	font-size: 15px;
+	display: block;
+	transition: all 0.15s;
+	position: relative;
+	border-radius: 3px;
+}
+
+#accordian>ul.show-dropdown>li.active>a,
+#accordian>ul>li>ul.show-dropdown>li.active>a,
+#accordian>ul>li>ul>li>ul.show-dropdown>li.active>a,
+#accordian>ul>li>ul>li>ul>li>ul.show-dropdown>li.active>a,
+#accordian>ul>li>ul>li>ul>li>ul>li>ul.show-dropdown>li.active>a{
+    background: linear-gradient(135deg, #07a7e7 0%, #32dac3 100%);
+    color: white;
+    box-shadow: 0px 1px 2px rgba(0, 137, 255, 0.2);
+}
+
+#accordian>ul>li>ul,
+#accordian>ul>li>ul>li>ul,
+#accordian>ul>li>ul>li>ul>li>ul,
+#accordian>ul>li>ul>li>ul>li>ul>li>ul {
+	display: none;
+}
+
+
+#accordian>ul>li.active>ul.show-dropdown,
+#accordian>ul>li>ul>li.active>ul.show-dropdown,
+#accordian>ul>li>ul>li>ul>li.active>ul.show-dropdown,
+#accordian>ul>li>ul>li>ul>li>ul>li.active>ul.show-dropdown {
+	display: block;
+}
+
+#accordian>ul>li>ul,
+#accordian>ul>li>ul>li>ul,
+#accordian>ul>li>ul>li>ul>li>ul,
+#accordian>ul>li>ul>li>ul>li>ul>li>ul {
+	padding-left: 20px;
+}
+
+#accordian a:not(:only-child):after {
+	content:"\f105";
+    position: absolute;
+    right: 20px;
+    top: 14px;
+    font-size: 15px;
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 900;
+    transition: 0.5s;
+}
+
+#accordian .active>a:not(:only-child):after {
+		transform: rotate(90deg);
+}
+
+
+
+
+
+
+
+import React from "react";
+import './DropNav.css';
+import $ from  "jquery";
+import { Link } from 'react-router-dom';
+
+export default props =>
+<div id="accordian">
+<ul className="show-dropdown">
+    <li>
+        <Link to="/Dashboard" className='text-light'><i className="fa fa-bar-chart"></i>Dashboard</Link>
+    </li>
+    <li>
+        <a href="javascript:void(0);" className='text-light'><i className="fa fa-clone"></i>Ordem de Serviço</a>
+        <ul>
+            <li>
+                <a href="javascript:void(0);" className='text-light'>Contrato</a>
+                <ul class="show-dropdown">
+                    <li><a href="javascript:void(0);" className='text-light'>Aguardando Chegar</a></li>
+                    <li><a href="javascript:void(0);" className='text-light'>Aguardando Vistoria</a></li>
+                    <li><a href="javascript:void(0);" className='text-light'>Aguardando Aprovação</a></li>
+                    <li><a href="javascript:void(0);" className='text-light'>Aprovado Separação</a></li>
+                    <li><a href="javascript:void(0);" className='text-light'>Aguardando Peças</a></li>
+                    <li><a href="javascript:void(0);" className='text-light'>Aprovado Manutenção</a></li>
+                    <li><a href="javascript:void(0);" className='text-light'>Em Manutenção</a></li>
+                    <li><a href="javascript:void(0);" className='text-light'>Manutenção Concluída</a></li>
+                    <li><a href="javascript:void(0);" className='text-light'>Revisão</a></li>
+                    <li><a href="javascript:void(0);" className='text-light'>Expedição</a></li>
+                    <li><a href="javascript:void(0);" className='text-light'>Finalizado</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);" className='text-light'>Overdues</a>
+                <ul>
+                    <li><a href="javascript:void(0);" className='text-light'>Today's tasks</a></li>
+                    <li><a href="javascript:void(0);" className='text-light'>Urgent</a></li>
+                    <li><a href="javascript:void(0);" className='text-light'>Overdues</a></li>
+                    <li><a href="javascript:void(0);" className='text-light'>Recurring</a></li>
+                    <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0);" className='text-light'>Recurring</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
+        </ul>
+    </li>
+    {/* <li>
+        <a href="javascript:void(0);" className='text-light'><i class="fa fa-address-book"></i>Address Book</a>
+        <ul>
+            <li><a href="javascript:void(0);" className='text-light'>Reports</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Search</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Graphs</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="javascript:void(0);" className='text-light'><i className="fa fa-calendar"></i>Calendar</a>
+        <ul>
+            <li><a href="javascript:void(0);" className='text-light'>Current Month</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Current Week</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Previous Month</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Previous Week</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Next Month</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Next Week</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Team Calendar</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Private Calendar</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="javascript:void(0);" className='text-light'><i className="fa fa-user"></i>Charts</a>
+        <ul>
+            <li><a href="javascript:void(0);" className='text-light'>Global favs</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>My favs</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Team favs</a></li>
+            <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
+        </ul>
+    </li> */}
+</ul>
+</div>
+
+$(document).ready(function() {
+    $("#accordian a").click(function() {
+        var link = $(this);
+        var closest_ul = link.closest("ul");
+        var parallel_active_links = closest_ul.find(".active")
+        var closest_li = link.closest("li");
+        var link_status = closest_li.hasClass("active");
+        var count = 0;
+
+        closest_ul.find("ul").slideUp(function() {
+            if (++count == closest_ul.find("ul").length){
+                parallel_active_links.removeClass("active");
+                parallel_active_links.children("ul").removeClass("show-dropdown");
+            }
+        });
+
+        if (!link_status) {
+            closest_li.children("ul").slideDown().addClass("show-dropdown");
+            closest_li.parent().parent("li.active").find('ul').find("li.active").removeClass("active");
+            link.parent().addClass("active");
+        }
+    })
+});
+
+
+// --------for-active-class-on-other-page-----------
+$(document).ready(function($){
+  	// Get current path and find target link
+  	var path = window.location.pathname.split("/").pop();
+  
+  	// Account for home page with empty path
+  	if ( path == '' ) {
+    	path = 'index.html';
+  	}
+     
+  	var target = $('#accordian li a[href="'+path+'"]');
+  	// Add active class to target link
+  	target.parents("li").addClass('active');
+  	target.parents("ul").addClass("show-dropdown");
+});
+
+
+
+menu multi-level
+
+<div class="navigation">
+        <ul>
+            <li class="has-sub"> <a href="#">Menu 1</a>
+                <ul>
+                    <li class="has-sub"> <a href="#">Submenu 1.1</a>
+                        <ul>
+                            <li><a href="#">Submenu 1.1.1</a></li>
+                            <li class="has-sub"><a href="#">Submenu 1.1.2</a>
+                                <ul>
+                                    <li><a href="#">Submenu 1.1.2.1</a></li>
+                                    <li><a href="#">Submenu 1.1.2.2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Submenu 1.2</a></li>
+                </ul>
+            </li>
+            <li class="has-sub"> <a href="#">Menu 2</a>
+                <ul>
+                    <li><a href="#">Submenu 2.1</a></li>
+                    <li><a href="#">Submenu 2.2</a></li>
+                </ul>
+            </li>
+            <li class="has-sub"> <a href="#">Menu 3</a>
+                <ul>
+                    <li><a href="#">Submenu 3.1</a></li>
+                    <li><a href="#">Submenu 3.2</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+
+
+    .navigation {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    line-height: 1;
+  }
+  
+  .navigation ul,
+  .navigation ul li,
+  .navigation ul ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navigation ul {
+    position: relative;
+    z-index: 500;
+    float: left;
+  }
+  
+  .navigation ul li {
+    float: left;
+    min-height: 0.05em;
+    line-height: 1em;
+    vertical-align: middle;
+    position: relative;
+  }
+  
+  .navigation ul li.hover,
+  .navigation ul li:hover {
+    position: relative;
+    z-index: 510;
+    cursor: default;
+  }
+  
+  .navigation ul ul {
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    z-index: 520;
+    width: 100%;
+  }
+  
+  .navigation ul ul li { float: none; }
+  
+  .navigation ul ul ul {
+    top: 0;
+    right: 0;
+  }
+  
+  .navigation ul li:hover > ul { visibility: visible; }
+  
+  .navigation ul ul {
+    top: 0;
+    left: 99%;
+  }
+  
+  .navigation ul li { float: none; }
+  
+  .navigation ul ul { margin-top: 0.05em; }
+  
+  .navigation {
+    width: 13em;
+    background: var(--bg-dark);
+    font-family: 'roboto', Tahoma, Arial, sans-serif;
+    zoom: 1;
+  }
+  
+  .navigation:before {
+    content: '';
+    display: block;
+  }
+  
+  .navigation:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  
+  .navigation a {
+    display: block;
+    padding: 1em 1.3em;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
+  .navigation > ul { width: 13em; }
+  
+  .navigation ul ul { width: 13em; }
+  
+  .navigation > ul > li > a {
+    border-right: 0.3em solid #34A65F;
+    color: #ffffff;
+  }
+  
+  .navigation > ul > li > a:hover { color: #ffffff; }
+  
+  .navigation > ul > li a:hover,
+  .navigation > ul > li:hover a { background: #363636; }
+  
+  .navigation li { position: relative; }
+  
+  .navigation ul li.has-sub > a:after {
+    content: '»';
+    position: absolute;
+    right: 1em;
+  }
+  
+  .navigation ul ul li.first {
+    -webkit-border-radius: 0 3px 0 0;
+    -moz-border-radius: 0 3px 0 0;
+    border-radius: 0 3px 0 0;
+  }
+  
+  .navigation ul ul li.last {
+    -webkit-border-radius: 0 0 3px 0;
+    -moz-border-radius: 0 0 3px 0;
+    border-radius: 0 0 3px 0;
+    border-bottom: 0;
+  }
+  
+  .navigation ul ul {
+    -webkit-border-radius: 0 3px 3px 0;
+    -moz-border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0;
+  }
+  
+  .navigation ul ul { border: 1px solid #34A65F; }
+  
+  .navigation ul ul a { color: #ffffff; }
+  
+  .navigation ul ul a:hover { color: #ffffff; }
+  
+  .navigation ul ul li { border-bottom: 1px solid #0F8A5F; }
+  
+  .navigation ul ul li:hover > a {
+    background: #4eb1ff;
+    color: #ffffff;
+  }
+  
+  .navigation.align-right > ul > li > a {
+    border-left: 0.3em solid #34A65F;
+    border-right: none;
+  }
+  
+  .navigation.align-right { float: right; }
+  
+  .navigation.align-right li { text-align: right; }
+  
+  .navigation.align-right ul li.has-sub > a:before {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    margin-top: -6px;
+  }
+  
+  .navigation.align-right ul li.has-sub > a:after { content: none; }
+  
+  .navigation.align-right ul ul {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    z-index: 598;
+    width: 100%;
+  }
+  
+  .navigation.align-right ul ul li.first {
+    -webkit-border-radius: 3px 0 0 0;
+    -moz-border-radius: 3px 0 0 0;
+    border-radius: 3px 0 0 0;
+  }
+  
+  .navigation.align-right ul ul li.last {
+    -webkit-border-radius: 0 0 0 3px;
+    -moz-border-radius: 0 0 0 3px;
+    border-radius: 0 0 0 3px;
+  }
+  
+  .navigation.align-right ul ul {
+    -webkit-border-radius: 3px 0 0 3px;
+    -moz-border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px;
+  }

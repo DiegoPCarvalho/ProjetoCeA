@@ -11,5 +11,4 @@ export default props =>
         <div className='menu2'>
              <DropNavSmart />
         </div>
-
     </aside>

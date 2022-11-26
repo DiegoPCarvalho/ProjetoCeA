@@ -1,75 +1,38 @@
 import React from "react";
 import './DropNav.css';
-import $ from  "jquery";
+import $ from "jquery";
 import { Link } from 'react-router-dom';
 
 export default props =>
 <div id="accordian">
 <ul className="show-dropdown">
     <li>
-        <Link to="/Dashboard" className='text-light'><i className="fa fa-bar-chart"></i>Dashboard</Link>
-    </li>
-    <li>
-        <a href="javascript:void(0);" className='text-light'><i className="fa fa-clone"></i>Components</a>
+        <Link to="/DashboardGeral" className='text-light'><i className="fa fa-bar-chart"></i>Dashboard</Link>
         <ul>
-            <li><a href="javascript:void(0);" className='text-light'>Today's tasks</a></li>
-            <li>
-                <a href="javascript:void(0);" className='text-light'>DrillDown (active)</a>
-                <ul class="show-dropdown">
-                    <li><a href="javascript:void(0);" className='text-light'>Today's tasks</a></li>
-                    <li class="active"><a href="javascript:void(0);" className='text-light'>Urgent</a></li>
-                    <li>
-                        <a href="javascript:void(0);" className='text-light'>Overdues</a>
-                        <ul>
-                            <li><a href="javascript:void(0);" className='text-light'>Today's tasks</a></li>
-                            <li><a href="javascript:void(0);" className='text-light'>Urgent</a></li>
-                            <li><a href="javascript:void(0);" className='text-light'>Overdues</a></li>
-                            <li><a href="javascript:void(0);" className='text-light'>Recurring</a></li>
-                            <li>
-                                <a href="javascript:void(0);" className='text-light'>Calendar</a>
-                                <ul>
-                                    <li><a href="javascript:void(0);" className='text-light'>Current Month</a></li>
-                                    <li><a href="javascript:void(0);" className='text-light'>Current Week</a></li>
-                                    <li><a href="javascript:void(0);" className='text-light'>Previous Month</a></li>
-                                    <li><a href="javascript:void(0);" className='text-light'>Previous Week</a></li>
-                                    <li><a href="javascript:void(0);" className='text-light'>Next Month</a></li>
-                                    <li><a href="javascript:void(0);" className='text-light'>Next Week</a></li>
-                                    <li><a href="javascript:void(0);" className='text-light'>Team Calendar</a></li>
-                                    <li><a href="javascript:void(0);" className='text-light'>Private Calendar</a></li>
-                                    <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="javascript:void(0);" className='text-light'>Recurring</a></li>
-                    <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="javascript:void(0);" className='text-light'>Overdues</a>
-                <ul>
-                    <li><a href="javascript:void(0);" className='text-light'>Today's tasks</a></li>
-                    <li><a href="javascript:void(0);" className='text-light'>Urgent</a></li>
-                    <li><a href="javascript:void(0);" className='text-light'>Overdues</a></li>
-                    <li><a href="javascript:void(0);" className='text-light'>Recurring</a></li>
-                    <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
-                </ul>
-            </li>
-            <li><a href="javascript:void(0);" className='text-light'>Recurring</a></li>
-            <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
+            <li><Link to="/DashboardGeral" className='text-light'><i className="fa fa-database"></i>Geral</Link></li>
+            <li><Link to="/DashboardAtendimentoOnSite" className='text-light'><i className="fa fa-plane"></i>Atendimento On-site</Link></li>
+            <li><Link to="/DashboardContrato" className='text-light'><i className="fa fa-university"></i>Contrato</Link></li>
+            <li><Link to="/DashboardManutencao" className='text-light'><i className="fa fa-fort-awesome"></i>Manutenção Corretiva</Link></li>
+            <li><Link to="/DashboardSuporte" className='text-light'><i className="fa fa-info-circle"></i>Suporte Remoto</Link></li>
         </ul>
     </li>
     <li>
-        <a href="javascript:void(0);" className='text-light'><i class="fa fa-address-book"></i>Address Book</a>
+        <a href="javascript:void(0);" className='text-light'><i className="fa fa-clone"></i>Ordem de Serviço</a>
         <ul>
-            <li><a href="javascript:void(0);" className='text-light'>Reports</a></li>
-            <li><a href="javascript:void(0);" className='text-light'>Search</a></li>
-            <li><a href="javascript:void(0);" className='text-light'>Graphs</a></li>
-            <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
+            <li><Link to="/AtendimentoOnSite" className='text-light'><i className="fa fa-plane"></i>Atendimento On-site</Link></li>
+            <li><Link to="/Contrato" className='text-light'><i className="fa fa-university"></i>Contrato</Link></li>
+            <li><Link to="/ManutencaoCorretiva" className='text-light'><i className="fa fa-fort-awesome"></i>Manutenção Corretiva</Link></li>
+            <li><Link to="/SuporteRemoto" className='text-light'><i className="fa fa-info-circle"></i>Suporte Remoto</Link></li>
         </ul>
     </li>
     <li>
-        <a href="javascript:void(0);" className='text-light'><i className="fa fa-calendar"></i>Calendar</a>
+        <a href="javascript:void(0);" className='text-light'><i class="fa fa-address-book"></i>Usuario</a>
+        <ul>
+            <li><a href="javascript:void(0);" className='text-light'><i className="fa fa-sign-out"></i>Sair</a></li>
+        </ul>
+    </li>
+    {/* <li>
+        <a href="javascript:void(0);" className='text-light'><i className="fa fa-calendar"></i>usar</a>
         <ul>
             <li><a href="javascript:void(0);" className='text-light'>Current Month</a></li>
             <li><a href="javascript:void(0);" className='text-light'>Current Week</a></li>
@@ -90,7 +53,7 @@ export default props =>
             <li><a href="javascript:void(0);" className='text-light'>Team favs</a></li>
             <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
         </ul>
-    </li>
+    </li> */}
 </ul>
 </div>
 
