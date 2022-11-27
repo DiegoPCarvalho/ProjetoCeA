@@ -19,10 +19,10 @@ export default props =>
     <li>
         <a href="javascript:void(0);" className='text-light'><i className="fa fa-clone"></i>Ordem de Serviço</a>
         <ul>
-            <li><Link to="/AtendimentoOnSite" className='text-light'><i className="fa fa-plane"></i>Atendimento On-site</Link></li>
-            <li><Link to="/Contrato" className='text-light'><i className="fa fa-university"></i>Contrato</Link></li>
-            <li><Link to="/ManutencaoCorretiva" className='text-light'><i className="fa fa-fort-awesome"></i>Manutenção Corretiva</Link></li>
-            <li><Link to="/SuporteRemoto" className='text-light'><i className="fa fa-info-circle"></i>Suporte Remoto</Link></li>
+            <li><a href="/AtendimentoOnSite" className='text-light'><i className="fa fa-plane"></i>Atendimento On-site</a></li>
+            <li><a href="/Contrato" className='text-light'><i className="fa fa-university"></i>Contrato</a></li>
+            <li><a href="/ManutencaoCorretiva" className='text-light'><i className="fa fa-fort-awesome"></i>Manutenção Corretiva</a></li>
+            <li><a href="/SuporteRemoto" className='text-light'><i className="fa fa-info-circle"></i>Suporte Remoto</a></li>
         </ul>
     </li>
     <li>

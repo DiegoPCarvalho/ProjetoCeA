@@ -1,0 +1,26 @@
+.boler{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.imagem {
+    display: block;
+    height: 170px;
+    width: 150px;
+    margin: 0px;
+
+}
+
+.imagem > img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5%;
+}
+
+.estagio {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 100px;
+}
