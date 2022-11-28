@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Main from '../Template/Main';
 import './GeralOrdem.css';
-import Contrato from '../../Assets/Imgs/contrato.jpg';
-import $ from 'jquery';
+import Atendimento from '../../Assets/Imgs/Atendimento.png';
+
 
 const headerProps = {
     icon: 'plane',
@@ -122,15 +122,10 @@ export default class AtendimentoOnSite extends Component {
                 <div className='row'>
                     <div className="col-12 col-md-9">
                         <select className="form-select" aria-label="Default select example" id='estagio'>
-                            <option selected>Aguardando Chegar</option>
-                            <option>Aguardando Vistoria</option>
-                            <option>Aguardando Aprovação</option>
-                            <option>Aprovado (Separação de Peças)</option>
+                            <option selected>Aguardando Vistoria</option>
+                            <option>Vistoriado</option>
                             <option>Aguardando Peça/Importação</option>
                             <option>Aprovado (Manutenção)</option>
-                            <option>Em Manutenção</option>
-                            <option>Manutenção Concluída</option>
-                            <option>Revisão</option>
                             <option>Expedição</option>
                             <option>Finalizada</option>
                         </select>
@@ -152,7 +147,7 @@ export default class AtendimentoOnSite extends Component {
                 <div className='container-fluid'>
                     <div className="boler row mb-2">
                         <div className="imagem col-3">
-                            <img src={Contrato} alt="" />
+                            <a href='/AtendimentoOnSite'><img src={Atendimento} alt="" /></a>
                         </div>
                         <div className="col-6 estagio">
                             {this.renderEstagio()}
