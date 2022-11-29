@@ -9,7 +9,7 @@ const headerProps = {
 }
 
 export default class DashboardManutencaoCorretiva extends Component {
-    CardTotalIMpressoras(texto,cor,bgCor, numero, estado) {
+    Card(texto,cor,bgCor, numero, estado) {
         return (
             <Card border={bgCor} bg={cor} style={{ width: '18rem' }}>
                 <Card.Body>
@@ -29,50 +29,50 @@ export default class DashboardManutencaoCorretiva extends Component {
                 <div className='master'>
                     <div className='d-flex text-light'>
                         <div className='sombra'>
-                        {this.CardTotalIMpressoras('Total Avulso','primary','',50,'Finalizada')}
+                        {this.Card('Total Avulso','primary','',50,'Finalizada')}
                      </div>
                     </div>
                     <p className='my-4'><span className='display-6 p-2'>Avulso CD'S:</span></p>
                     <div className='d-flex '>
                         <div className='text-light mx-1 sombra'>
-                            {this.CardTotalIMpressoras('Leitor RFID','success','',50,'Finalizada')}
+                            {this.Card('Leitor RFID','success','',50,'Finalizada')}
                         </div>
                         <div className='text-light mx-1 sombra'>
-                            {this.CardTotalIMpressoras('Carregador','success','',50,'Finalizada')}
+                            {this.Card('Carregador','success','',50,'Finalizada')}
                         </div>
                         <div className='text-light mx-1 sombra'>
-                            {this.CardTotalIMpressoras('Fonte','success','',50,'Finalizada')}
+                            {this.Card('Fonte','success','',50,'Finalizada')}
                         </div>
                         <div className='text-light mx-1 sombra'>
-                            {this.CardTotalIMpressoras('Leitor LS2208','success','',50,'Finalizada')}
+                            {this.Card('Leitor LS2208','success','',50,'Finalizada')}
                         </div>
                     </div>
                     <p className='my-4'><span className='display-6 p-2'>Avulso Lojas:</span></p>
                     <div className='d-flex text-light'>
-                        <div className='mx-1 sombra'>{this.CardTotalIMpressoras('Leitor RFID','secondary','',50,'Finalizada')}</div>
-                        <div className='mx-1 sombra'>{this.CardTotalIMpressoras('Carregador','secondary','',50,'Finalizada')}</div>
-                        <div className='mx-1 sombra'>{this.CardTotalIMpressoras('Fonte','secondary','',50,'Finalizada')}</div>
-                        <div className='mx-1 sombra'>{this.CardTotalIMpressoras('Leitor LS2208','secondary','',50,'Finalizada')}</div>
+                        <div className='mx-1 sombra'>{this.Card('Leitor RFID','secondary','',50,'Finalizada')}</div>
+                        <div className='mx-1 sombra'>{this.Card('Carregador','secondary','',50,'Finalizada')}</div>
+                        <div className='mx-1 sombra'>{this.Card('Fonte','secondary','',50,'Finalizada')}</div>
+                        <div className='mx-1 sombra'>{this.Card('Leitor LS2208','secondary','',50,'Finalizada')}</div>
                     </div>
                     <p className='mt-5'><span className='display-6 p-2'>Avulso em Processo:</span></p>
                     <div className='d-flex text-light'>
-                        <div className='mx-1 sombra'>{this.CardTotalIMpressoras('Aguardando Vistoria','warning','',50)}</div>
-                        <div className='mx-1 sombra'>{this.CardTotalIMpressoras('Em Vistoria','warning','',50)}</div>
-                        <div className='mx-1 sombra'>{this.CardTotalIMpressoras('Vistoriado','warning','',50)}</div>
-                        <div className='mx-1 sombra'>{this.CardTotalIMpressoras('Aguardando Aprovação','warning','',50)}</div>
-                        <div className='mx-1 sombra'>{this.CardTotalIMpressoras('Aguardando Peça','warning','',50)}</div>
+                        <div className='mx-1 sombra'>{this.Card('Aguardando Vistoria','warning','',50)}</div>
+                        <div className='mx-1 sombra'>{this.Card('Em Vistoria','warning','',50)}</div>
+                        <div className='mx-1 sombra'>{this.Card('Vistoriado','warning','',50)}</div>
+                        <div className='mx-1 sombra'>{this.Card('Aguardando Aprovação','warning','',50)}</div>
+                        <div className='mx-1 sombra'>{this.Card('Aguardando Peça','warning','',50)}</div>
                     </div>
                     <div className="d-flex text-light mt-2">
-                        <div className='mx-1 sombra'>{this.CardTotalIMpressoras('Aprovado (Separação)','warning','',50)}</div>
-                        <div className='mx-1 sombra'>{this.CardTotalIMpressoras('Aprovado (Manutenção)','warning','',50)}</div>
-                        <div className='mx-1 sombra'>{this.CardTotalIMpressoras('Em Manutenção','warning','',50)}</div>
-                        <div className='mx-1 sombra'>{this.CardTotalIMpressoras('Manutenção Concluida','warning','',50)}</div>
-                        <div className='mx-1 sombra'>{this.CardTotalIMpressoras('Revisão','warning','',50)}</div>
+                        <div className='mx-1 sombra'>{this.Card('Aprovado (Separação)','warning','',50)}</div>
+                        <div className='mx-1 sombra'>{this.Card('Aprovado (Manutenção)','warning','',50)}</div>
+                        <div className='mx-1 sombra'>{this.Card('Em Manutenção','warning','',50)}</div>
+                        <div className='mx-1 sombra'>{this.Card('Manutenção Concluida','warning','',50)}</div>
+                        <div className='mx-1 sombra'>{this.Card('Revisão','warning','',50)}</div>
                     </div>
                     <div className="d-flex text-light mt-2">
                         
-                        <div className='mx-1 sombra'>{this.CardTotalIMpressoras('Expedição','warning','',50)}</div>
-                        <div className='mx-1 sombra'>{this.CardTotalIMpressoras('Finalizada','warning','',50)}</div>
+                        <div className='mx-1 sombra'>{this.Card('Expedição','warning','',50)}</div>
+                        <div className='mx-1 sombra'>{this.Card('Finalizada','warning','',50)}</div>
                     </div>
 
                 </div>
