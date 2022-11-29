@@ -12,7 +12,7 @@ export default props =>
             <li><Link to="/DashboardGeral" className='text-light'><i className="fa fa-database"></i>Geral</Link></li>
             <li><Link to="/DashboardAtendimentoOnSite" className='text-light'><i className="fa fa-plane"></i>Atendimento On-site</Link></li>
             <li><Link to="/DashboardContrato" className='text-light'><i className="fa fa-university"></i>Contrato</Link></li>
-            <li><Link to="/DashboardManutencao" className='text-light'><i className="fa fa-fort-awesome"></i>Manutenção Corretiva</Link></li>
+            <li><Link to="/DashboardManutencao" className='text-light'><i className="fa fa-fort-awesome"></i>Avulso</Link></li>
             <li><Link to="/DashboardSuporte" className='text-light'><i className="fa fa-info-circle"></i>Suporte Remoto</Link></li>
         </ul>
     </li>
@@ -21,7 +21,7 @@ export default props =>
         <ul>
             <li><a href="/AtendimentoOnSite" className='text-light'><i className="fa fa-plane"></i>Atendimento On-site</a></li>
             <li><a href="/Contrato" className='text-light'><i className="fa fa-university"></i>Contrato</a></li>
-            <li><a href="/ManutencaoCorretiva" className='text-light'><i className="fa fa-fort-awesome"></i>Manutenção Corretiva</a></li>
+            <li><a href="/ManutencaoCorretiva" className='text-light'><i className="fa fa-fort-awesome"></i>Avulso</a></li>
             <li><a href="/SuporteRemoto" className='text-light'><i className="fa fa-info-circle"></i>Suporte Remoto</a></li>
         </ul>
     </li>

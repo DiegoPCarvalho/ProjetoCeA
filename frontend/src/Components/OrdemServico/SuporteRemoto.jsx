@@ -121,7 +121,7 @@ export default class SuporteRemoto extends Component {
                     <div className="col-12 col-md-9">
                         <select className="form-select" aria-label="Default select example" id='estagio'>
                             <option selected>Abertura de Suporte</option>
-                            <option selected>Aguardando Vistoria</option>
+                            <option>Aguardando Vistoria</option>
                             <option>Em Atendimento</option>
                             <option>Manutenção Concluída</option>
                             <option>Expedição</option>

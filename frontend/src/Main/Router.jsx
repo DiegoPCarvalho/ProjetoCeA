@@ -2,8 +2,6 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 //componentes
-//inicial
-import Home from '../Components/Home/Home';
 
 //DashBoard
 import DashboardGeral from '../Components/Dashboard/DashboardGeral';
@@ -21,7 +19,6 @@ import SuporteRemoto from '../Components/OrdemServico/SuporteRemoto';
 
 export default props => (
     <Routes>
-        <Route exact path="/Home" element={<Home />} />
         <Route path="/DashboardGeral" element={<DashboardGeral />} />
         <Route path="/DashboardAtendimentoOnSite" element={<DashAtendimentoOnSite />} />
         <Route path="/DashboardContrato" element={<DashboardContrato />} />
@@ -31,6 +28,6 @@ export default props => (
         <Route path="/Contrato" element={<Contrato/>} />
         <Route path="/ManutencaoCorretiva" element={<ManutencaoCorretiva/>} />
         <Route path="/SuporteRemoto" element={<SuporteRemoto/>} />
-        <Route path="*" element={<Home />} />
+        <Route path="*" element={<DashboardGeral />} />
     </Routes>
 );

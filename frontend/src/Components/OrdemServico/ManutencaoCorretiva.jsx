@@ -5,7 +5,7 @@ import Manutencao from '../../Assets/Imgs/Manutencao.jpg';
 
 const headerProps = {
     icon: 'fort-awesome',
-    title: 'Manutenção Corretiva'
+    title: 'Avulso'
 }
 
 export default class ManutencaoCorretiva extends Component {
