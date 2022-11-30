@@ -785,3 +785,11 @@ menu multi-level
     -moz-border-radius: 3px 0 0 3px;
     border-radius: 3px 0 0 3px;
   }
+
+
+
+
+https://www.pluralsight.com/guides/how-to-trigger-modal-for-react-bootstrap
+
+mapas:
+https://codepen.io/fabiogoodoy/pen/KKyLQo
