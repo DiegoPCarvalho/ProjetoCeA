@@ -16,6 +16,9 @@ import Contrato from '../Components/OrdemServico/Contrato';
 import ManutencaoCorretiva from "../Components/OrdemServico/ManutencaoCorretiva";
 import SuporteRemoto from '../Components/OrdemServico/SuporteRemoto';
 
+//elemneto de maps
+import Maps from '../Components/Maps/Mapas';
+
 
 export default props => (
     <Routes>
@@ -29,5 +32,6 @@ export default props => (
         <Route path="/ManutencaoCorretiva" element={<ManutencaoCorretiva/>} />
         <Route path="/SuporteRemoto" element={<SuporteRemoto/>} />
         <Route path="*" element={<DashboardGeral />} />
+        <Route path="/sair" element={<Maps />} />
     </Routes>
 );

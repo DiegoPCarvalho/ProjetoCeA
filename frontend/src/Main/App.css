@@ -6,6 +6,10 @@
     --menu-top-height: 70px;
     --aside-width: 250px;
     --footer-height: 40px;
+
+    --default-blue-stroke: #0098ff;
+	--default-grey-black-fill: #525252;
+	--default-strok: rgb(0, 0, 0);
     
 
     --shadow:
