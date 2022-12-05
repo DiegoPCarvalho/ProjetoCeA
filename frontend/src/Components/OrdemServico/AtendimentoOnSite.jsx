@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Main from '../Template/Main';
 import './GeralOrdem.css';
-import Atendimento from '../../Assets/Imgs/Atendimento.png';
+import LogoCeA from '../../Assets/Imgs/logoCeA.png';
+import { Link } from 'react-router-dom';
 
 
 const headerProps = {
@@ -144,13 +145,40 @@ export default class AtendimentoOnSite extends Component {
     render() {
         return (
             <Main {...headerProps}>
-                <div className='container-fluid'>
+                {/* <div className='container-fluid'>
                     <div className="boler row mb-2">
                         <div className="imagem col-3">
-                            <a href='/AtendimentoOnSite'><img src={Atendimento} alt="" /></a>
+                            <a href='/AtendimentoOnSite'><img src={LogoCeA} alt="" /></a>
                         </div>
-                        <div className="col-6 estagio">
+                        <div className="col-6 estagio d-flex justify-content-end ">
                             {this.renderEstagio()}
+                        </div>
+                        <div className="col-3 d-flex justify-content-end align-items-start">
+                            <Link to="/MpAtendimento" className='btn btn-danger'>Voltar</Link>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-12">
+                            {this.renderTable()}
+                        </div>
+                    </div>
+                </div> */}
+                <div className='container-fluid'>
+                    <div className="row">
+                        <div className="col-3 imagem">
+                            <a href='/AtendimentoOnSite'><img src={LogoCeA} alt="" /></a>
+                        </div>
+                        <div className="col-3 text-light d-flex justify-content-center align-items-start">
+                            <div className='bg-success rounded w-50'>
+                                <p className='d-flex justify-content-center h1 p-1'>Total </p>
+                                <p className='d-flex justify-content-center h3'>50</p>
+                            </div>
+                        </div>
+                        <div className="col-5 d-flex justify-content-end">
+                            {this.renderEstagio()}
+                        </div>
+                        <div className="col-1 d-flex justify-content-end align-items-start">
+                            <Link to="/MpAtendimento" className='btn btn-danger'>Voltar</Link>
                         </div>
                     </div>
                     <div className="row">

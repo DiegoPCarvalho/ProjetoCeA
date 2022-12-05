@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Main from '../Template/Main';
 import './GeralOrdem.css';
-import Contract from '../../Assets/Imgs/contrato.jpg';
+import LogoCeA from '../../Assets/Imgs/logoCeA.png';
+import { Link } from 'react-router-dom';
 
 const headerProps = {
     icon: 'university',
@@ -148,12 +149,21 @@ export default class Contrato extends Component {
         return (
             <Main {...headerProps}>
                 <div className='container-fluid'>
-                    <div className="boler row mb-2">
-                        <div className="imagem col-3">
-                            <a href='/Contrato'><img src={Contract} alt="" /></a>
+                    <div className="row">
+                        <div className="col-6 col-md-3 imagem">
+                            <a href='/Contrato'><img src={LogoCeA} alt="" /></a>
                         </div>
-                        <div className="col-6 estagio">
+                        <div className="col-6 col-md-3 text-light d-flex justify-content-center align-items-start">
+                            <div className='bg-success rounded w-50'>
+                                <p className='d-flex justify-content-center h1 p-1'>Total</p>
+                                <p className='d-flex justify-content-center h3'>50</p>
+                            </div>
+                        </div>
+                        <div className=" col-6 col-md-5 d-flex justify-content-end">
                             {this.renderEstagio()}
+                        </div>
+                        <div className="col-6 col-md-1 d-flex justify-content-end align-items-start">
+                            <Link to="/MpContrato" className='btn btn-danger'>Voltar</Link>
                         </div>
                     </div>
                     <div className="row">

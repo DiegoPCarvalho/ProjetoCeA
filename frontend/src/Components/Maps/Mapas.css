@@ -1,10 +1,11 @@
 svg text{
 	fill: var(--default-strok);
 	font-family: monospace;
-	font-weight: bolder;   
+	font-weight: bolder;
 }
+
 .estados-sudeste{
-    fill: #38AF20;
+    fill: #008000;
 	-webkit-transition: .8s ease;
 	-moz-transition: .8s ease;
 	-ms-transition: .8s ease;
@@ -15,6 +16,73 @@ svg text{
 	stroke-width: 2px;
 	stroke: var(--default-strok);
 }
+
+.estados-norte{
+    fill: 	#B22222;
+	-webkit-transition: .8s ease;
+	-moz-transition: .8s ease;
+	-ms-transition: .8s ease;
+	-o-transition: .8s ease;
+	transition: .8s ease;
+	stroke-dasharray: 180%;
+	stroke-dashoffset: -120%;
+	stroke-width: 2px;
+	stroke: var(--default-strok);
+}
+
+
+.estados-nordeste{
+    fill: 	#FFD700;
+	-webkit-transition: .8s ease;
+	-moz-transition: .8s ease;
+	-ms-transition: .8s ease;
+	-o-transition: .8s ease;
+	transition: .8s ease;
+	stroke-dasharray: 180%;
+	stroke-dashoffset: -120%;
+	stroke-width: 2px;
+	stroke: var(--default-strok);
+}
+
+.estados-sul{
+    fill: 	#D2691E;
+	-webkit-transition: .8s ease;
+	-moz-transition: .8s ease;
+	-ms-transition: .8s ease;
+	-o-transition: .8s ease;
+	transition: .8s ease;
+	stroke-dasharray: 180%;
+	stroke-dashoffset: -120%;
+	stroke-width: 2px;
+	stroke: var(--default-strok);
+}
+
+.estados-centro{
+    fill: 	royalblue;
+	-webkit-transition: .8s ease;
+	-moz-transition: .8s ease;
+	-ms-transition: .8s ease;
+	-o-transition: .8s ease;
+	transition: .8s ease;
+	stroke-dasharray: 180%;
+	stroke-dashoffset: -120%;
+	stroke-width: 2px;
+	stroke: var(--default-strok);
+}
+.estados-df{
+    fill: 	#191970;
+	-webkit-transition: .8s ease;
+	-moz-transition: .8s ease;
+	-ms-transition: .8s ease;
+	-o-transition: .8s ease;
+	transition: .8s ease;
+	stroke-dasharray: 180%;
+	stroke-dashoffset: -120%;
+	stroke-width: 2px;
+	stroke: var(--default-strok);
+}
+
+
 .mapa-svg-estados {
 	fill: #373737;
 	-webkit-transition: .8s ease;
@@ -32,12 +100,30 @@ svg text{
 	stroke:none
 }
 
-.mapa-svg-estados:hover {
+.estados-norte:hover {
 	cursor: pointer;
 	fill: var(--default-grey-black-fill);
 
 }
+
 .estados-sudeste:hover {
+	cursor: pointer;
+	fill: var(--default-grey-black-fill);
+
+}
+
+.estados-nordeste:hover {
+	cursor: pointer;
+	fill: var(--default-grey-black-fill);
+
+}
+
+.estados-centro:hover {
+	cursor: pointer;
+	fill: var(--default-grey-black-fill);
+
+}
+.estados-sul:hover {
 	cursor: pointer;
 	fill: var(--default-grey-black-fill);
 
@@ -53,6 +139,7 @@ svg text{
 	-ms-transition: .8s ease;
 	-o-transition: .8s ease;
 }
+
 .mapa-svg-estados-active text{
 	stroke: none;
 }

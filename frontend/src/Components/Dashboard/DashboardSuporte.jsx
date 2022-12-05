@@ -5,7 +5,7 @@ import './Dashboard.css';
 
 const headerProps = {
     icon: 'info-circle',
-    title: 'Suporte Remoto'
+    title: 'Help Desk'
 }
 
 export default class DashboardSuporteRemoto extends Component {

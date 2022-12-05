@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Main from '../Template/Main';
 import './GeralOrdem.css';
-import Suporte from '../../Assets/Imgs/Suporte.png';
+import LogoCeA from '../../Assets/Imgs/logoCeA.png';
+import { Link } from 'react-router-dom';
 
+import $ from  'jquery';
 const headerProps = {
     icon: 'info-circle',
-    title: 'Suporte Remoto'
+    title: 'Help Desk'
 }
 
 export default class SuporteRemoto extends Component {
@@ -84,14 +86,14 @@ export default class SuporteRemoto extends Component {
                     <td>C&A</td>
                     <td>Coletor</td>
                     <td>12345</td>
-                    <td>54321</td>
+                    <td><span className='placares'>5</span></td>
                 </tr>
                 <tr>
                     <td>12345</td>
                     <td>C&A</td>
                     <td>Coletor</td>
                     <td>12345</td>
-                    <td>54321</td>
+                    <td><span className='placares'>7</span></td>
                 </tr>
                 <tr>
                     <td>12345</td>
@@ -143,12 +145,21 @@ export default class SuporteRemoto extends Component {
         return (
             <Main {...headerProps}>
                 <div className='container-fluid'>
-                    <div className="boler row mb-2">
-                        <div className="imagem col-3">
-                            <a href='/AtendimentoOnSite'><img src={Suporte} alt=""/></a>
+                    <div className="row">
+                        <div className="col-6 col-md-3 imagem">
+                            <a href='/HelpDesk'><img src={LogoCeA} alt="" /></a>
                         </div>
-                        <div className="col-6 estagio">
+                        <div className="col-6 col-md-3 text-light d-flex justify-content-center align-items-start">
+                            <div className='bg-success rounded w-50'>
+                                <p className='d-flex justify-content-center h1 p-1'>Total</p>
+                                <p className='d-flex justify-content-center h3'>50</p>
+                            </div>
+                        </div>
+                        <div className=" col-6 col-md-5 d-flex justify-content-end">
                             {this.renderEstagio()}
+                        </div>
+                        <div className="col-6 col-md-1 d-flex justify-content-end align-items-start">
+                            <Link to="/MpHelpDesk" className='btn btn-danger'>Voltar</Link>
                         </div>
                     </div>
                     <div className="row">
@@ -161,3 +172,21 @@ export default class SuporteRemoto extends Component {
         )
     }
 }
+
+$(document).ready(function () {
+    $(".placares").each(function () {
+        if ($(this).text() == "5") {
+            //limpa class anterior
+            $(this).removeAttr('');
+            //adiciona class desejada 
+            $(this).addClass('vermelho');
+
+        } else if ($(this).text() === "7") {
+            //limpa class anterior
+            $(this).removeAttr('');
+            //adiciona class desejada 
+            $(this).addClass('verde');
+
+        }
+    });
+});

@@ -38,11 +38,14 @@ export default class DashboardGeral extends Component {
     render() {
         return (
             <Main {...headerProps}>
-                <div className='sombra'>
+                {/* <div className='d-flex justify-content-center'> */}
+                <div className='sombra ttb'>
                     <div>
                         <Carrousel />
                     </div>
+                    {/* w-75 h-50 */}
                 </div>
+                {/* </div> */}
                 <div className='d-flex mt-4 justify-content-between'>
                     <div className='sombra mx-1'>
                         <Link to="/DashboardAtendimentoOnSite">

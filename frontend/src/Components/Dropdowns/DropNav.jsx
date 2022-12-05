@@ -12,28 +12,22 @@ export default props =>
             <li><Link to="/DashboardGeral" className='text-light'><i className="fa fa-database"></i>Geral</Link></li>
             <li><Link to="/DashboardAtendimentoOnSite" className='text-light'><i className="fa fa-plane"></i>Atendimento On-site</Link></li>
             <li><Link to="/DashboardContrato" className='text-light'><i className="fa fa-university"></i>Contrato</Link></li>
-            <li><Link to="/DashboardManutencao" className='text-light'><i className="fa fa-fort-awesome"></i>Avulso</Link></li>
-            <li><Link to="/DashboardSuporte" className='text-light'><i className="fa fa-info-circle"></i>Suporte Remoto</Link></li>
+            <li><Link to="/DashboardAvulso" className='text-light'><i className="fa fa-fort-awesome"></i>Avulso</Link></li>
+            <li><Link to="/DashboardHelpDesk" className='text-light'><i className="fa fa-info-circle"></i>Atendimento Help Desk</Link></li>
         </ul>
     </li>
     <li>
         <a href="javascript:void(0);" className='text-light'><i className="fa fa-clone"></i>Ordem de Serviço</a>
         <ul>
-            <li><a href="/AtendimentoOnSite" className='text-light'><i className="fa fa-plane"></i>Atendimento On-site</a></li>
-            <li><a href="/Contrato" className='text-light'><i className="fa fa-university"></i>Contrato</a></li>
-            <li><a href="/ManutencaoCorretiva" className='text-light'><i className="fa fa-fort-awesome"></i>Avulso</a></li>
-            <li><a href="/SuporteRemoto" className='text-light'><i className="fa fa-info-circle"></i>Suporte Remoto</a></li>
+            <li><Link to="/MpAtendimento" className='text-light'><i className="fa fa-plane"></i>Atendimento On-site</Link></li>
+            <li><Link to="/MpContrato" className='text-light'><i className="fa fa-university"></i>Contrato</Link></li>
+            <li><Link to="/MpAvulso" className='text-light'><i className="fa fa-fort-awesome"></i>Avulso</Link></li>
+            <li><Link to="/MpHelpDesk" className='text-light'><i className="fa fa-info-circle"></i>Atendimento Help Desk</Link></li>
         </ul>
     </li>
     <li>
-        <a href="javascript:void(0);" className='text-light'><i class="fa fa-address-book"></i>Usuario</a>
-        <ul>
-            <li><a href="/sair" className='text-light'><i className="fa fa-sign-out"></i>Sair</a></li>
-        </ul>
-    </li>
-    {/* <li>
-        <a href="javascript:void(0);" className='text-light'><i className="fa fa-calendar"></i>usar</a>
-        <ul>
+        <a href="javascript:void(0);" className='text-light'><i className="fa fa-smile-o"></i>Satisfação do CLiente</a>
+        {/* <ul>
             <li><a href="javascript:void(0);" className='text-light'>Current Month</a></li>
             <li><a href="javascript:void(0);" className='text-light'>Current Week</a></li>
             <li><a href="javascript:void(0);" className='text-light'>Previous Month</a></li>
@@ -43,9 +37,15 @@ export default props =>
             <li><a href="javascript:void(0);" className='text-light'>Team Calendar</a></li>
             <li><a href="javascript:void(0);" className='text-light'>Private Calendar</a></li>
             <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
-        </ul>
+        </ul> */}
     </li>
-    <li>
+        <li>
+            <a href="javascript:void(0);" className='text-light'><i class="fa fa-address-book"></i>Usuario</a>
+            <ul>
+                <li><a href="/sair" className='text-light'><i className="fa fa-sign-out"></i>Sair</a></li>
+            </ul>
+        </li>
+    {/* <li>
         <a href="javascript:void(0);" className='text-light'><i className="fa fa-user"></i>Charts</a>
         <ul>
             <li><a href="javascript:void(0);" className='text-light'>Global favs</a></li>

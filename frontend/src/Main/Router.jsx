@@ -16,8 +16,12 @@ import Contrato from '../Components/OrdemServico/Contrato';
 import ManutencaoCorretiva from "../Components/OrdemServico/ManutencaoCorretiva";
 import SuporteRemoto from '../Components/OrdemServico/SuporteRemoto';
 
-//elemneto de maps
-import Maps from '../Components/Maps/Mapas';
+//componente de maps
+import Maps from '../Components/Maps/Mapa';
+import MpAtendimento from "../Components/Maps/MapaAtendimentoOnSite";
+import MpContrato from "../Components/Maps/MapContrato";
+import MpAvulso from '../Components/Maps/MapAvulso';
+import MpHelpDesk from '../Components/Maps/MpHelpDesk';
 
 
 export default props => (
@@ -25,13 +29,18 @@ export default props => (
         <Route path="/DashboardGeral" element={<DashboardGeral />} />
         <Route path="/DashboardAtendimentoOnSite" element={<DashAtendimentoOnSite />} />
         <Route path="/DashboardContrato" element={<DashboardContrato />} />
-        <Route path="/DashboardManutencao" element={<DashboardManutencaoCorretiva />} />
-        <Route path="/DashboardSuporte" element={<DashboardSuporteRemoto />} />
+        <Route path="/DashboardAvulso" element={<DashboardManutencaoCorretiva />} />
+        <Route path="/DashboardHelpDesk" element={<DashboardSuporteRemoto />} />
         <Route path="/AtendimentoOnSite" element={<AtendimentoOnSite/>} />
         <Route path="/Contrato" element={<Contrato/>} />
-        <Route path="/ManutencaoCorretiva" element={<ManutencaoCorretiva/>} />
-        <Route path="/SuporteRemoto" element={<SuporteRemoto/>} />
+        <Route path="/Avulso" element={<ManutencaoCorretiva/>} />
+        <Route path="/HelpDesk" element={<SuporteRemoto/>} />
         <Route path="*" element={<DashboardGeral />} />
         <Route path="/sair" element={<Maps />} />
+        {/* Mapas */}
+        <Route path="/MpAtendimento" element={<MpAtendimento />} />
+        <Route path="/MpContrato" element={<MpContrato />} />
+        <Route path="/MpAvulso" element={<MpAvulso />} />
+        <Route path="/MpHelpDesk" element={<MpHelpDesk />} />
     </Routes>
 );
