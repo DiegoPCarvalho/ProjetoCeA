@@ -6,11 +6,7 @@ a{
     text-decoration: none;
 }
 
-.vermelho {
-    color: red;
+.grafico{
+    min-width: 310px;
+    
 }
-
-.verde{
-    color: green;
-}
-

@@ -2040,3 +2040,10 @@ class Brasil extends Component {
 }
 
 export default Brasil;
+
+
+
+ssl local
+// set HTTPS=true&&set SSL_CRT_FILE=./certificado/cert.crt&&set SSL_KEY_FILE=./certificado/cert.key&&
+
+<link rel="icon" href="https://zhaz.com.br/wp-content/uploads/2020/10/cropped-zhaz-favicon-1-32x32.png" sizes="32x32">
