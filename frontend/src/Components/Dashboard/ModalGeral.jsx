@@ -12,7 +12,7 @@ export default function ModalAtendimento(props) {
     <>
       <Button variant={props.corModal} onClick={handleShow} style={props.estilo}  className={props.classe}>
          <div>
-            <h1 className='text-light'><strong>{props.nome}</strong></h1>
+            <h2 className='text-light'><strong>{props.nome}</strong></h2>
             <p className='fw-bold h3 text-light'>{props.qtd}</p>
             <p>{props.situacao}</p>
          </div>
