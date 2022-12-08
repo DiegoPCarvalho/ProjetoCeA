@@ -4,6 +4,7 @@ import './Dashboard.css';
 import HighCharts from 'highcharts';
 import HighChartsReact from 'highcharts-react-official';
 import ModalGeral from './ModalGeral';
+import { Link } from  'react-router-dom';
 
 //Carrousel
 // import Carrousel from '../Carrousel/CarrouselGrafic';
@@ -201,18 +202,22 @@ export default class DashboardGeral extends Component {
                             {this.renderGrafico3()}
                         </div>
                     </div>
-                    <div className='row  mt-4'>
+                    <div className='row mt-4'>
                         <div className="col-6 col-md-3  d-flex justify-content-center">
-                          <ModalGeral corModal="primary" local="/DashboardAtendimentoOnSite" relatorio={this.renderGrafico2('column')} nome="Atendimento On-Site"/>
+                          <ModalGeral corModal="primary" relatorio={this.renderGrafico2('column')} nome="Atendimento On-Site" estilo={{height: 200, width: 400}}
+                              link={<Link to="/DashboardAtendimentoOnSite" className={`btn btn-primary fw-bold`}>Relatório</Link>} />
                         </div>
                         <div className="col-6 col-md-3 d-flex justify-content-center">
-                            <ModalGeral corModal="dark" local="/DashboardContrato" relatorio={this.renderGrafico2('area')} nome="Contrato"/>
+                            <ModalGeral corModal="dark" relatorio={this.renderGrafico2('area')} nome="Contrato" estilo={{height: 200, width: 400}} 
+                                 link={<Link to="/DashboardContrato" className={`btn btn-dark fw-bold`}>Relatório</Link>}/>
                         </div>
                         <div className="col-6 col-md-3 d-flex justify-content-center">
-                            <ModalGeral corModal="success" local="/DashboardAvulso" relatorio={this.renderGrafico()} nome="Avulso"/>
+                            <ModalGeral corModal="success" relatorio={this.renderGrafico()} nome="Avulso" estilo={{height: 200, width: 400}}
+                               link={<Link to="/DashboardAvulso" className={`btn btn-success fw-bold`}>Relatório</Link>} />
                         </div>
                         <div className="col-6 col-md-3  d-flex justify-content-center">
-                            <ModalGeral corModal="warning" local="/DashboardHelpDesk" relatorio={this.renderGrafico2()} nome="Help Desk"/>
+                            <ModalGeral corModal="warning" relatorio={this.renderGrafico2()} nome="Help Desk" estilo={{height: 200, width: 400}}
+                                link={<Link to="/DashboardHelpDesk" className={`btn btn-warning text-light fw-bold`}>Relatório</Link>}/>
                         </div>
                     </div>
                 </div>

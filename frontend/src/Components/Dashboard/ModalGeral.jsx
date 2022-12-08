@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { Link } from 'react-router-dom';
 
 export default function ModalAtendimento(props) {
   const [show, setShow] = useState(false);
@@ -11,8 +10,13 @@ export default function ModalAtendimento(props) {
 
   return (
     <>
-      <Button variant={props.corModal} onClick={handleShow} style={props.estilo}  className="sombra">
-         <h4 className='text-light'><strong>{props.nome}</strong></h4>
+      <Button variant={props.corModal} onClick={handleShow} style={props.estilo}  className={props.classe}>
+         <div>
+            <h1 className='text-light'><strong>{props.nome}</strong></h1>
+            <p className='fw-bold h3 text-light'>{props.qtd}</p>
+            <p>{props.situacao}</p>
+         </div>
+        
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -21,7 +25,7 @@ export default function ModalAtendimento(props) {
         </Modal.Header>
         <Modal.Body>{props.relatorio}</Modal.Body>
         <Modal.Footer>
-          <Link to={props.local} className={`btn btn-${props.corModal} text-light fw-bold`}>Relatório</Link>
+            {props.link}
         </Modal.Footer>
       </Modal>
     </>
