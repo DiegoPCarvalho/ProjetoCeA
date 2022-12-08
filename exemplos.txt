@@ -2047,3 +2047,73 @@ ssl local
 // set HTTPS=true&&set SSL_CRT_FILE=./certificado/cert.crt&&set SSL_KEY_FILE=./certificado/cert.key&&
 
 <link rel="icon" href="https://zhaz.com.br/wp-content/uploads/2020/10/cropped-zhaz-favicon-1-32x32.png" sizes="32x32">
+
+
+
+Card(titulo,numero,cor) {
+    //     return (
+    //         <Card style={{ width: '18rem' }} bg={cor}>
+    //             <Card.Header>
+    //                 <h2 className="text-light d-flex justify-content-center">
+    //                     <strong>{titulo}</strong>
+    //                 </h2>
+    //             </Card.Header>
+    //             <Card.Body>
+    //                 <Card.Text>
+    //                     <h1 className="text-light d-flex justify-content-center">
+    //                         <strong>{numero}</strong>
+
+    //                     </h1>
+    //                     <p className='text-light d-flex justify-content-center'>Finalizados</p>
+    //                 </Card.Text>
+    //             </Card.Body>
+    //         </Card>
+    //     )
+    // }
+
+
+
+     state = { isOpen: false, isOpen2: false}
+
+    openModal = () => this.setState({ isOpen: true })
+    closeModal = () => this.setState({ isOpen: false })
+    openModal2 = () => this.setState({ isOpen: true })
+    closeModal2 = () => this.setState({ isOpen: false })
+
+    renderModal(corModal, nome, local, relatorio) {
+        return (
+            <>
+            <Button variant={corModal} onClick={this.openModal} style={{height: 150, width: 200}}>
+                        <h4><strong>{nome}</strong></h4>
+            </Button>
+                <Modal show={this.state.isOpen} onHide={this.closeModal}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>{nome}</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>{relatorio}</Modal.Body>
+                    <Modal.Footer>
+                        <Link to={local} className={`btn btn-${corModal}`}>Relatório</Link>
+                    </Modal.Footer>
+                </Modal>
+            </>
+        );
+    }
+
+    renderModal2(corModal, nome, local, relatorio) {
+        return (
+            <>
+            <Button variant={corModal} onClick={this.openModal2} style={{height: 150, width: 200}}>
+                        <h4><strong>{nome}</strong></h4>
+            </Button>
+                <Modal show={this.state.isOpen2} onHide={this.closeModal2}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>{nome}</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>{relatorio}</Modal.Body>
+                    <Modal.Footer>
+                        <Link to={local} className={`btn btn-${corModal}`}>Relatório</Link>
+                    </Modal.Footer>
+                </Modal>
+            </>
+        );
+    }

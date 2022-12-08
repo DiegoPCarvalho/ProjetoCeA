@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Main from '../Template/Main';
 import Card from 'react-bootstrap/Card';
 import './Dashboard.css';
-import ModalAtendimento from './ModalAtendimento';
+import ModalAtendimento from './ModalGeral';
 
 const headerProps = {
     icon: 'university',
