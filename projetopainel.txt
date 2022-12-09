@@ -1,0 +1,94 @@
+const express = require("express");
+const app = express();
+const axios = require("axios");
+const port = 5000;
+
+
+
+
+app.get('/', async (req, res) => {
+    const tabela = await axios('https://cosmoserp.com/zhaz/aWSPCosmosFBX.aspx?f2117e5dfa7f998f93afd92547d0ba9b,vApiOS,4');
+    const suporte = tabela.data;
+    // const sup = tabela.data;
+
+    // await formataData(suporte)
+    // await formataHora(suporte)
+    
+
+    let dados = { dado: []}
+
+    for(let i = 0; i < suporte.length; i++) {
+        let descricao = suporte[i].DescricaoTipoOS;
+        if(descricao == "MANUTENCAO CORRETIVA LABORATORIO") {
+            dados.dado.push({
+                OS: suporte[i].OSID,
+                Data_abertura: dataCerta(suporte[i].OSData),
+                Cliente: suporte[i].PessoaFantasia,
+                Vendedor: suporte[i].AgenteNegNome,
+                Equipamento: suporte[i].NomeEquipamento,
+                NS: suporte[i].EquipamentoLTS,
+                SLA: diferenca(suporte[i].OSData)
+            });
+        }
+    }   
+
+
+    res.json(dados.dado)
+})
+
+
+app.listen(port, (err) => {
+    try {
+        console.log('server is running!!!')
+    } catch (error) {
+        console.log("Error: " + error);
+    }
+})
+
+
+formataData = async (dataItem) => {
+    for (var i = 0; i < dataItem.length; i++) {
+        var dataA = dataItem[i];
+        var dataF = await dataA.OSData.replace(/(\d*)-(\d*)-(\d*)T(\d*):(\d*).*/, '$3/$2/$1-$4:$5');
+        dataA.OSData = await dataF;
+    }
+
+    for (var i = 0; i < dataItem.length; i++) {
+        var dataA = dataItem[i];
+        var dataF = await dataA.DataFinalMovto.replace(/(\d*)-(\d*)-(\d*)T(\d*):(\d*).*/, '$3/$2/$1 $4:$5');
+        dataA.DataFinalMovto = await dataF;
+    }
+}
+
+formataHora = async (dataHora) => {
+    for (var i = 0; i < dataHora.length; i++) {
+        var data = await dataHora[i];
+        var hora = await data.DataFinalMovto.replace(/(\d*)/,)
+    }
+}
+
+function dataPC() {
+    var dataUsEn = new Date();
+    // var dataPtBr = dataUsEn.replace(/(\d*)-(\d*)-(\d*)T(\d*):(\d*).*/, '$1/$2/$3-$4:$5');
+    return dataUsEn
+}
+
+
+ function diferenca(dia) {
+    const d1 = new Date(dia);
+    const d2 = new Date(dataPC());
+    const diffInMs = d2 - d1
+    const diffInDays = diffInMs / (1000 * 60 * 60 * 24 );
+    const total = diffInDays.toFixed(0)
+
+   return total
+   
+}
+
+
+function dataCerta(dia){
+    const dt = new Date(dia).toLocaleDateString();
+    return dt
+}
+
+console.log(diferenca("12/12/2022"))
