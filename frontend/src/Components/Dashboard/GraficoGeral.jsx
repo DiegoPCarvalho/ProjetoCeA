@@ -4,10 +4,15 @@ import HighChartsReact from 'highcharts-react-official';
 
 export default function graficoGeral(props) {
     const pieData = [
-        { name: 'S4M', y: 30 },
-        { name: 'ZT230', y: 50 },
-        { name: 'SD360', y: 10 },
-        { name: 'ALEGRO 4206', y: 10 },
+        { name: props.nome1, y: props.i1 },
+        { name: props.nome2, y: props.i2 },
+        { name: props.nome3, y: props.i3 },
+        { name: props.nome4, y: props.i4 },
+        { name: props.nome5, y: props.i5 },
+        { name: props.nome6, y: props.i6 },
+        { name: props.nome7, y: props.i7 },
+        { name: props.nome8, y: props.i8 },
+        { name: props.nome9, y: props.i9 }
       ]
 
     const dados = {

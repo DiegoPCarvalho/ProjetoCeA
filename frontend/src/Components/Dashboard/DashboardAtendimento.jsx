@@ -122,7 +122,14 @@ export default class DashAtendimentoOnSite extends Component {
                 <div className='master'>
                     <div className='d-flex text-light'>
                         <div className='sombra'>
-                            <ModalGeral nome="Total" qtd="50" situacao="Fizalizada" corModal="primary" estilo={{height: 180, width: 300}} relatorio={<GraficoGeral tipo="pie"/>}/>
+                            <ModalGeral nome="Total" qtd="50" situacao="Fizalizada" corModal="primary"
+                               estilo={{height: 180, width: 300}} relatorio={
+                               <GraficoGeral tipo="pie" 
+                                nome1="S4m" i1={10}
+                                nome2="SD360" i2={50}
+                                nome3="Alegro 4206" i3={30}
+                                nome4="ZT230" i4={20}
+                               />}/>
                         </div>
                     </div>
                     <p className='my-4'><span className='display-6 p-2'>Atedimento CD'S:</span></p>

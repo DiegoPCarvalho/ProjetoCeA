@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import Main from '../Template/Main';
-import Card from 'react-bootstrap/Card';
+
 import './Dashboard.css';
-import ModalAtendimento from './ModalGeral';
+import ModalGeral from './ModalGeral';
+
+import GraficoGeral from './GraficoGeral';
+import HighCharts from 'highcharts';
+import HighChartsReact from 'highcharts-react-official';
 
 const headerProps = {
     icon: 'university',
@@ -10,62 +14,224 @@ const headerProps = {
 }
 
 export default class DashboardContrato extends Component {
-    Card(texto,cor,bgCor, numero, estado) {
+
+    renderGrafico(titulo) {
+        const myData = [
+            { name: '2018', value: 10 },
+            { name: '2019', value: 4 },
+            { name: '2020', value: 8 },
+            { name: '2021', value: 9 },
+            { name: '2022', value: 10 },
+        ]
+
+        const dados = {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: titulo
+            },
+            xAxis: {
+                categories: myData.map(x => x.name),
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: ''
+                }
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Ano',
+                data: myData.map(x => x.value)
+            }]
+        }
+
         return (
-            <Card border={bgCor} bg={cor} style={{ width: '18rem' }}>
-                <Card.Body>
-                    <Card.Title className='mt-2 d-flex justify-content-center'><strong>{texto}</strong></Card.Title>
-                    <Card.Text className='d-flex justify-content-center'>
-                        <h1><strong>{numero}</strong></h1>
-                    </Card.Text>
-                        <p className='d-flex justify-content-center'>{estado}</p>
-                </Card.Body>
-            </Card>
+            <HighChartsReact highcharts={HighCharts} options={dados} />
         )
     }
-    
+
+    renderGrafico2(titulo, varia) {
+        const myData = [
+            { name: 'TC51', value: 10 },
+            { name: 'TC56', value: 4 }
+        ]
+
+        const dados = {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: titulo
+            },
+            xAxis: {
+                categories: myData.map(x => x.name),
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: ''
+                }
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: varia,
+                data: myData.map(x => x.value)
+            }]
+        }
+
+        return (
+            <HighChartsReact highcharts={HighCharts} options={dados} />
+        )
+    }
+
     render() {
         return (
             <Main {...headerProps}>
                 <div className='master'>
                     <div className='d-flex text-light'>
                         <div className='sombra'>
-                        {this.Card('Total Contrato','primary','',50,'Finalizada')}
-                        {/* <ModalAtendimento /> */}
-                     </div>
+                            <ModalGeral
+                                nome="Total" qtd="50" situacao="Finalizada"
+                                corModal="primary" estilo={{ height: 180, width: 300 }}
+                                relatorio={
+                                    <GraficoGeral tipo="pie" nome1="TC51"
+                                        nome2="TC56" i1={30} i2={60}
+                                    />}
+                            />
+                        </div>
                     </div>
-                    
+
                     <p className='my-4'><span className='display-6 p-2'>Contrato CD'S:</span></p>
                     <div className='d-flex '>
                         <div className='text-light mx-1 sombra'>
-                        {this.Card('TC51','success','',50,'Finalizada')}
+                            <ModalGeral
+                                nome="TC51" qtd="50" situacao="Finalizada"
+                                corModal="success" estilo={{ height: 187, width: 300 }}
+                                relatorio={this.renderGrafico()}
+                            />
                         </div>
                         <div className='text-light mx-1 sombra'>
-                            {this.Card('TC56','success','',50,'Finalizada')}
+                            <ModalGeral
+                                nome="TC56" qtd="50" situacao="Finalizada"
+                                corModal="success" estilo={{ height: 187, width: 300 }}
+                                relatorio={this.renderGrafico()}
+                            />
                         </div>
                     </div>
                     <p className='my-4'><span className='display-6 p-2'>Contrato Lojas:</span></p>
                     <div className='d-flex text-light'>
-                        <div className='mx-1 sombra'>{this.Card('TC51','secondary','',50,'Finalizada')}</div>
-                        <div className='mx-1 sombra'>{this.Card('TC56','secondary','',50,'Finalizada')}</div>
+                        <div className='mx-1 sombra'>
+                            <ModalGeral
+                                nome="TC51" qtd="50" situacao="Finalizada"
+                                corModal="secondary" estilo={{ height: 187, width: 300 }}
+                                relatorio={this.renderGrafico()}
+                            />
+                        </div>
+                        <div className='mx-1 sombra'>
+                            <ModalGeral
+                                nome="TC56" qtd="50" situacao="Finalizada"
+                                corModal="secondary" estilo={{ height: 187, width: 300 }}
+                                relatorio={this.renderGrafico()}
+                            />
+                        </div>
                     </div>
                     <p className='mt-5'><span className='display-6 p-2'>Contrato em Processo:</span></p>
                     <div className='d-flex text-light'>
-                        <div className='mx-1 sombra'>{this.Card('Aguardando Chegar','warning','',50)}</div>
-                        <div className='mx-1 sombra'>{this.Card('Aguardando Vistoria','warning','',50)}</div>
-                        <div className='mx-1 sombra'>{this.Card('Aguardando Aprovação','warning','',50)}</div>
-                        <div className='mx-1 sombra'>{this.Card('Aguardando Peça','warning','',50)}</div>
-                        <div className='mx-1 sombra'>{this.Card('Aprovado (Separação)','warning','',50)}</div>
+                        <div className='mx-1 sombra'>
+                            <ModalGeral
+                                nome="Aguardando Chegar" qtd="50"
+                                corModal="warning" estilo={{ height: 163, width: 250 }}
+                                relatorio={this.renderGrafico2('', 'Aguardando Chegar')}
+                            />
+                        </div>
+                        <div className='mx-1 sombra'>
+                            <ModalGeral
+                                nome="Aguardando Vistoria" qtd="50"
+                                corModal="warning" estilo={{ height: 163, width: 250 }}
+                                relatorio={this.renderGrafico2('', 'Aguardando Vistoria')}
+                            />
+                        </div>
+                        <div className='mx-1 sombra'>
+                            <ModalGeral
+                                nome="Aguardando Aprovação" qtd="50"
+                                corModal="warning" estilo={{ height: 163, width: 250 }}
+                                relatorio={this.renderGrafico2('', 'Aguardando Aprovação')}
+                            />
+                        </div>
+                        <div className='mx-1 sombra'>
+                            <ModalGeral
+                                nome="Aguardando Peça" qtd="50"
+                                corModal="warning" estilo={{ height: 163, width: 250 }}
+                                relatorio={this.renderGrafico2('', 'Aguardando Peça')}
+                            />
+                        </div>
+                        <div className='mx-1 sombra'>
+                            <ModalGeral
+                                nome="Aprovado (Separação)" qtd="50"
+                                corModal="warning" estilo={{ height: 163, width: 250 }}
+                                relatorio={this.renderGrafico2('', 'Aprovado (Separação)')}
+                            />
+                        </div>
                     </div>
                     <div className="d-flex text-light mt-2">
-                        <div className='mx-1 sombra'>{this.Card('Aprovado (Manutenção)','warning','',50)}</div>
-                        <div className='mx-1 sombra'>{this.Card('Em Manutenção','warning','',50)}</div>
-                        <div className='mx-1 sombra'>{this.Card('Manutenção Concluida','warning','',50)}</div>
-                        <div className='mx-1 sombra'>{this.Card('Revisão','warning','',50)}</div>
-                        <div className='mx-1 sombra'>{this.Card('Expedição','warning','',50)}</div>
+                        <div className='mx-1 sombra'>
+                            <ModalGeral
+                                nome="Aprovado (Manutenção)" qtd="50"
+                                corModal="warning" estilo={{ height: 163, width: 250 }}
+                                relatorio={this.renderGrafico2('', 'Aprovado (Manutenção)')}
+                            />
+                        </div>
+                        <div className='mx-1 sombra'>
+                            <ModalGeral
+                                nome="Em Manutenção" qtd="50"
+                                corModal="warning" estilo={{ height: 163, width: 250 }}
+                                relatorio={this.renderGrafico2('', 'Em Manutenção')}
+                            />
+                        </div>
+                        <div className='mx-1 sombra'>
+                            <ModalGeral
+                                nome="Manutenção Concluída" qtd="50"
+                                corModal="warning" estilo={{ height: 163, width: 250 }}
+                                relatorio={this.renderGrafico2('', 'Manutenção Concluída')}
+                            />
+                        </div>
+                        <div className='mx-1 sombra'>
+                            <ModalGeral
+                                nome="Revisão" qtd="50"
+                                corModal="warning" estilo={{ height: 163, width: 250 }}
+                                relatorio={this.renderGrafico2('', 'Revisão')}
+                            />
+                        </div>
+                        <div className='mx-1 sombra'>
+                            <ModalGeral
+                                nome="Expedição" qtd="50"
+                                corModal="warning" estilo={{ height: 163, width: 250 }}
+                                relatorio={this.renderGrafico2('', 'Expedição')}
+                            />
+                        </div>
                     </div>
                     <div className="d-flex text-light mt-2">
-                        <div className='mx-1 sombra'>{this.Card('Finalizada','warning','',50)}</div>
+                        <div className='mx-1 sombra'>
+                            <ModalGeral
+                                nome="Finalizada" qtd="50"
+                                corModal="warning" estilo={{ height: 163, width: 250 }}
+                                relatorio={this.renderGrafico2('', 'Finalizada')}
+                            />
+                        </div>
                     </div>
 
                 </div>
