@@ -23,6 +23,11 @@ import MpContrato from "../Components/Maps/MapContrato";
 import MpAvulso from '../Components/Maps/MapAvulso';
 import MpHelpDesk from '../Components/Maps/MpHelpDesk';
 
+//login
+import Login from '../Login/Login';
+
+import App from './App';
+
 
 export default props => (
     <Routes>
@@ -36,11 +41,11 @@ export default props => (
         <Route path="/Avulso" element={<ManutencaoCorretiva/>} />
         <Route path="/HelpDesk" element={<SuporteRemoto/>} />
         <Route path="*" element={<DashboardGeral />} />
-        <Route path="/sair" element={<Maps />} />
         {/* Mapas */}
         <Route path="/MpAtendimento" element={<MpAtendimento />} />
         <Route path="/MpContrato" element={<MpContrato />} />
         <Route path="/MpAvulso" element={<MpAvulso />} />
         <Route path="/MpHelpDesk" element={<MpHelpDesk />} />
+        <Route path="/login" element={<Login />} />
     </Routes>
 );

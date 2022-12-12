@@ -4,7 +4,7 @@ import './GeralOrdem.css';
 import LogoCeA from '../../Assets/Imgs/logoCeA.png';
 import { Link } from 'react-router-dom';
 
-import $ from  'jquery';
+import $ from 'jquery';
 const headerProps = {
     icon: 'info-circle',
     title: 'Help Desk'
@@ -13,103 +13,128 @@ const headerProps = {
 export default class SuporteRemoto extends Component {
     renderTable() {
         return (
-                <table className="table table-bordered mt-5" id="table_id">
-                    <thead className='table-dark'>
-                        <tr>
-                            <th>OS</th>
-                            <th>Cliente</th>
-                            <th>Equipamento</th>
-                            <th>NS</th>
-                            <th>CH</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {/* {this.renderRows()} */}
-                        <tr>
-                    <td>12345</td>
-                    <td>C&A</td>
-                    <td>Coletor</td>
-                    <td>12345</td>
-                    <td>54321</td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>C&A</td>
-                    <td>Coletor</td>
-                    <td>12345</td>
-                    <td>54321</td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>C&A</td>
-                    <td>Coletor</td>
-                    <td>12345</td>
-                    <td>54321</td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>C&A</td>
-                    <td>Coletor</td>
-                    <td>12345</td>
-                    <td>54321</td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>C&A</td>
-                    <td>Coletor</td>
-                    <td>12345</td>
-                    <td>54321</td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>C&A</td>
-                    <td>Coletor</td>
-                    <td>12345</td>
-                    <td>54321</td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>C&A</td>
-                    <td>Coletor</td>
-                    <td>12345</td>
-                    <td>54321</td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>C&A</td>
-                    <td>Coletor</td>
-                    <td>12345</td>
-                    <td>54321</td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>C&A</td>
-                    <td>Coletor</td>
-                    <td>12345</td>
-                    <td><span className='placares'>5</span></td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>C&A</td>
-                    <td>Coletor</td>
-                    <td>12345</td>
-                    <td><span className='placares'>7</span></td>
-                </tr>
-                <tr>
-                    <td>12345</td>
-                    <td>C&A</td>
-                    <td>Coletor</td>
-                    <td>12345</td>
-                    <td>54321</td>
-                </tr>
-                    </tbody>
-                </table>
+            <table className="table table-bordered mt-5" id="table_id">
+                <thead className='table-dark'>
+                    <tr>
+                        <th>Data</th>
+                        <th>OS</th>
+                        <th>Cliente</th>
+                        <th>Equipamento</th>
+                        <th>NS</th>
+                        <th>CH</th>
+                        <th>SLA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {/* {this.renderRows()} */}
+                    <tr>
+                        <td>12/05/22</td>
+                        <td>12345</td>
+                        <td>C&A</td>
+                        <td>Coletor</td>
+                        <td>12345</td>
+                        <td>54321</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>12/05/22</td>
+                        <td>12345</td>
+                        <td>C&A</td>
+                        <td>Coletor</td>
+                        <td>12345</td>
+                        <td>54321</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>12/05/22</td>
+                        <td>12345</td>
+                        <td>C&A</td>
+                        <td>Coletor</td>
+                        <td>12345</td>
+                        <td>54321</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>12/05/22</td>
+                        <td>12345</td>
+                        <td>C&A</td>
+                        <td>Coletor</td>
+                        <td>12345</td>
+                        <td>54321</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>12/05/22</td>
+                        <td>12345</td>
+                        <td>C&A</td>
+                        <td>Coletor</td>
+                        <td>12345</td>
+                        <td>54321</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>12/05/22</td>
+                        <td>12345</td>
+                        <td>C&A</td>
+                        <td>Coletor</td>
+                        <td>12345</td>
+                        <td>54321</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>12/05/22</td>
+                        <td>12345</td>
+                        <td>C&A</td>
+                        <td>Coletor</td>
+                        <td>12345</td>
+                        <td>54321</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>12/05/22</td>
+                        <td>12345</td>
+                        <td>C&A</td>
+                        <td>Coletor</td>
+                        <td>12345</td>
+                        <td>54321</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>12/05/22</td>
+                        <td>12345</td>
+                        <td>C&A</td>
+                        <td>Coletor</td>
+                        <td>12345</td>
+                        <td>54321</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>12/05/22</td>
+                        <td>12345</td>
+                        <td>C&A</td>
+                        <td>Coletor</td>
+                        <td>12345</td>
+                        <td>54321</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>12/05/22</td>
+                        <td>12345</td>
+                        <td>C&A</td>
+                        <td>Coletor</td>
+                        <td>12345</td>
+                        <td>54321</td>
+                        <td>5</td>
+                    </tr>
+
+                </tbody>
+            </table>
         )
     }
 
     // renderRows() {
     //     return (
-                
+
     //     )
     // }
 
