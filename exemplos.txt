@@ -2117,3 +2117,98 @@ Card(titulo,numero,cor) {
             </>
         );
     }
+
+
+
+
+
+    import React from 'react';
+import DataTable from 'react-data-table-component';
+import DataTableExtensions from 'react-data-table-component-extensions';
+import 'react-data-table-component-extensions/dist/index.css';
+import Main from '../Template/Main';
+
+const columns = [
+    {
+      name: 'Title',
+      selector: 'title',
+      sortable: true,
+    },
+    {
+      name: 'Director',
+      selector: 'director',
+      sortable: true,
+    },
+    {
+      name: 'Genres',
+      selector: 'genres',
+      sortable: true,
+      cell: d => <span>{d.genres.join(', ')}</span>,
+    },
+    {
+      name: 'Year',
+      selector: 'year',
+      sortable: true,
+    },
+  ];
+
+
+  const data = [
+    {
+      title: 'Beetlejuice',
+      year: '1988',
+      genres: [
+        'Comedy',
+        'Fantasy',
+      ],
+      director: 'Tim Burton',
+    },
+    {
+      id: 2,
+      title: 'The Cotton Club',
+      year: '1984',
+      runtime: '127',
+      genres: [
+        'Crime',
+        'Drama',
+        'Music',
+      ],
+      director: 'Francis Ford Coppola',
+    }];
+
+function App() {
+  const tableData = {
+    columns,
+    data,
+  };
+
+  return (
+    <Main>
+        <div className='border'>
+    <DataTableExtensions
+      {...tableData}
+    >
+        
+      <DataTable
+        fixedHeader
+        defaultSortField="id"
+        defaultSortAsc={false}
+        pagination
+        highlightOnHover 
+      />
+     
+    </DataTableExtensions>
+    </div>
+    </Main>
+  );
+}
+
+export default App;
+
+
+
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiA3LKyyvT7AhUGrJUCHRVtC5QQtwJ6BAgqEAI&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DhzB76AIetks&usg=AOvVaw2UNa64m5KVTonmTEQTqjtc
+
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiA3LKyyvT7AhUGrJUCHRVtC5QQtwJ6BAgnEAI&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DrgY1oPNVgwU&usg=AOvVaw1tgYSQ5QkIiXkjvvtFIKx0
+
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=video&cd=&cad=rja&uact=8&ved=2ahUKEwjggdz9yvT7AhV3qZUCHa9GDvEQtwJ6BAgFEAI&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DcXMf8L0hpRU&usg=AOvVaw3eTkvDoyh_-xdJ_sHHt2Bh

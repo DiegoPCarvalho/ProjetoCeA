@@ -17,16 +17,14 @@ import ManutencaoCorretiva from "../Components/OrdemServico/ManutencaoCorretiva"
 import SuporteRemoto from '../Components/OrdemServico/SuporteRemoto';
 
 //componente de maps
-import Maps from '../Components/Maps/Mapa';
 import MpAtendimento from "../Components/Maps/MapaAtendimentoOnSite";
 import MpContrato from "../Components/Maps/MapContrato";
 import MpAvulso from '../Components/Maps/MapAvulso';
 import MpHelpDesk from '../Components/Maps/MpHelpDesk';
 
 //login
-import Login from '../Login/Login';
 
-import App from './App';
+import Tabela from '../Components/Tabela/TabelaDinamica';
 
 
 export default props => (
@@ -46,6 +44,6 @@ export default props => (
         <Route path="/MpContrato" element={<MpContrato />} />
         <Route path="/MpAvulso" element={<MpAvulso />} />
         <Route path="/MpHelpDesk" element={<MpHelpDesk />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Tabela />} />
     </Routes>
 );
