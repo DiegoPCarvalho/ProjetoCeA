@@ -6,7 +6,7 @@ const port = 5000;
 const port2 = 3000;
  
 app.use(express.static(path.join(__dirname, 'build')));
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 
 

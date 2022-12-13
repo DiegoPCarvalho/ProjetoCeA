@@ -16,11 +16,13 @@
     }
 
     .login {
-      height: 1000px;
+      height: 969px;
       width: 100%;
       /* background: radial-gradient(#653d84, #332042); */
-      background-color: #1A2F3A;
+      /* background-color: #1A2F3A; */
+      background: url(https://i.gifer.com/81mg.gif);
       position: relative;
+      
     }
 
     .login_box {
@@ -77,7 +79,7 @@
       border: none;
       width: 80%;
       margin: 15px 0px;
-      border-bottom: 1px solid #4f30677d;
+      border-bottom: 1px solid white;
       padding: 7px 9px;
       width: 100%;
       overflow: hidden;
@@ -87,7 +89,8 @@
     }
 
     .left {
-      background: linear-gradient(-45deg, #dcd7e0, #fff);
+      /* background: linear-gradient(-45deg, #dcd7e0, #fff); */
+      background: #1A2F3A;
     }
 
     .submit {
@@ -97,12 +100,12 @@
       display: block;
       margin: auto;
       margin-top: 120px;
-      background: #1A2F3A;
+      background: black;
       color: #fff;
       font-weight: bold;
-      -webkit-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
-      -moz-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
-      box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+      /* -webkit-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+      -moz-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1); */
+      box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     }
 
 
@@ -165,7 +168,7 @@
 </head>
 
 <body>
-  <section class="login">
+  <section class="login text-light">
     <div class="login_box sombra">
       <div class="left">
         <!-- <div class="top_link"><a href="#"><img
@@ -174,9 +177,9 @@
         <div class="contact">
           <form action="">
             <h3>LOGIN</h3>
-            <input type="text" placeholder="USUARIO">
-            <input type="text" placeholder="SENHA">
-            <a href="http://192.168.15.211:5000" class="btn btn-secondary submit">Entrar</a>
+            <input type="text" class="text-light" placeholder="USUARIO">
+            <input type="password"  class="text-light" placeholder="SENHA">
+            <a href="http://192.168.15.211:5000" class="btn btn-light submit">Entrar</a>
           </form>
         </div>
       </div>
