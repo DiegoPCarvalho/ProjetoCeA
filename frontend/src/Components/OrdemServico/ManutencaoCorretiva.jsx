@@ -4,12 +4,29 @@ import './GeralOrdem.css';
 import LogoCeA from '../../Assets/Imgs/logoCeA.png';
 import { Link } from 'react-router-dom';
 
+
+import "jquery/dist/jquery.min.js";
+import "datatables.net-dt/js/dataTables.dataTables";
+import "datatables.net-dt/css/jquery.dataTables.min.css";
+import $ from 'jquery';
+
 const headerProps = {
     icon: 'fort-awesome',
     title: 'Avulso'
 }
 
 export default class ManutencaoCorretiva extends Component {
+
+    componentDidMount() {
+        $(document).ready(function () {
+          setTimeout(() => {
+            $('#table_id').DataTable({
+              language: { url: '//cdn.datatables.net/plug-ins/1.11.1/i18n/pt_br.json', },
+            });
+          }, 1)
+        });
+      }
+
     renderTable() {
         return (
             <table className="table table-bordered mt-5" id="table_id">
