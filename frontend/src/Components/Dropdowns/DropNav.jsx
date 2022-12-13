@@ -42,7 +42,7 @@ export default props =>
         <li>
             <a href="javascript:void(0);" className='text-light'><i class="fa fa-address-book"></i>Usuario</a>
             <ul>
-                <li><Link to="/login" className='text-light'><i className="fa fa-sign-out"></i>Sair</Link></li>
+                <li><a href="http://192.168.15.211:3000/" className='text-light'><i className="fa fa-sign-out"></i>Sair</a></li>
             </ul>
         </li>
     {/* <li>
