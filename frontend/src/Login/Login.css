@@ -1,153 +1,51 @@
-img {
-    width: 100%;
+ 
+.login {
+  background: url(../Assets/Imgs/fundoLogin.jpg);
+  width: 100%;
+  height: 100%;
+  float: none;
+  position: fixed;
+  z-index: 1;
+}
+
+.formLogin {
+  margin: 200px 150px 150px 400px;
+}
+
+.imagem>img {
+  overflow: hidden;
+  height: 85%;
+  width: 70%;
+}
+
+.imagem {
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  overflow: hidden;
+}
+
+.tamanho {
+  height: 500px;
+  width: 1000px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.transparencia {
+  background: rgba( 255, 255, 255, 0.85 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 17.5px );
+  -webkit-backdrop-filter: blur( 17.5px );
+  overflow: hidden;
+}
+
+@media(max-width: 1400px){
+  .formLogin{
+    margin: 100px 150px 150px 200px;
   }
-
-  .login {
-    height: 969px;
-    width: 100%;
-    /* background: radial-gradient(#653d84, #332042); */
-    /* background-color: #1A2F3A; */
-    background: url(https://i.gifer.com/81mg.gif);
-    position: relative;
-    
+  .tamanho {
+    height: 500px;
+    width: 900px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   }
-
-  .login_box {
-    width: 1050px;
-    height: 600px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 1px 4px 22px -8px #0004;
-    display: flex;
-    overflow: hidden;
-  }
-
-  .login_box .left {
-    width: 41%;
-    height: 100%;
-    padding: 25px 25px;
-
-  }
-
-  .login_box .right {
-    width: 59%;
-    height: 100%
-  }
-
-  .left .top_link a {
-    color: #452A5A;
-    font-weight: 400;
-  }
-
-  .left .top_link {
-    height: 20px
-  }
-
-  .left .contact {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-    height: 100%;
-    width: 73%;
-    margin: auto;
-  }
-
-  .left h3 {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  .left input {
-    border: none;
-    width: 80%;
-    margin: 15px 0px;
-    border-bottom: 1px solid white;
-    padding: 7px 9px;
-    width: 100%;
-    overflow: hidden;
-    background: transparent;
-    font-weight: 600;
-    font-size: 14px;
-  }
-
-  .left {
-    /* background: linear-gradient(-45deg, #dcd7e0, #fff); */
-    background: #1A2F3A;
-  }
-
-  .submit {
-    border: none;
-    padding: 15px 70px;
-    border-radius: 8px;
-    display: block;
-    margin: auto;
-    margin-top: 120px;
-    background: black;
-    color: #fff;
-    font-weight: bold;
-    /* -webkit-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
-    -moz-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1); */
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-  }
-
-
-
-  .right {
-    /* background: linear-gradient(90deg, rgba(46, 46, 46, 1) 0%, rgba(101, 101, 113, 1) 48%, rgba(55, 56, 56, 1) 100%), url(https://s3.amazonaws.com/gupy5/production/companies/32311/career/70267/images/2022-05-25_19-27_logo.png); */
-    background-image: url(https://monitormercantil.com.br/wp-content/uploads/2022/04/c-a-2-logo.png);
-    /* background-image: url(https://s3.amazonaws.com/gupy5/production/companies/32311/career/70267/images/2022-05-25_19-27_logo.png); */
-    /* background: linear-gradient(90deg, rgba(46, 46, 46, 1) 0%, rgba(101, 101, 113, 1) 48%, rgba(55, 56, 56, 1) 100%); */
-    /* background-color: black; */
-    position: relative;
-    width: 100%;
-    height: 400px;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-
-  .right .right-text {
-    height: 100%;
-    position: relative;
-    transform: translate(0%, 45%);
-  }
-
-  .right-text h2 {
-    display: block;
-    width: 100%;
-    text-align: center;
-    font-size: 50px;
-    font-weight: 500;
-  }
-
-  .right-text h5 {
-    display: block;
-    width: 100%;
-    text-align: center;
-    font-size: 19px;
-    font-weight: 400;
-  }
-
-  .right .right-inductor {
-    position: absolute;
-    width: 70px;
-    height: 7px;
-    background: #fff0;
-    left: 50%;
-    bottom: 70px;
-    transform: translate(-50%, 0%);
-  }
-
-  .top_link img {
-    width: 28px;
-    padding-right: 7px;
-    margin-top: -3px;
-  }
-
-  .sombra{
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-  }
+}

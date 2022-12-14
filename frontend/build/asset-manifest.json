@@ -1,19 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.942478fe.css",
-    "main.js": "/static/js/main.7f5c4e63.js",
+    "main.css": "/static/css/main.890e36a7.css",
+    "main.js": "/static/js/main.6b477edd.js",
     "static/media/fontawesome-webfont.svg?v=4.7.0": "/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
     "static/media/fontawesome-webfont.eot": "/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
     "static/media/fontawesome-webfont.ttf?v=4.7.0": "/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
     "static/media/logoCeA.png": "/static/media/logoCeA.022a0b4f021e9ca2e792.png",
+    "static/media/fundoLogin.jpg": "/static/media/fundoLogin.70df82d4d8b2fad86a65.jpg",
+    "static/media/logo2.png": "/static/media/logo2.947eb011f907067dc145.png",
     "static/media/fontawesome-webfont.woff?v=4.7.0": "/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
     "static/media/fontawesome-webfont.woff2?v=4.7.0": "/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/logoZhaz.png": "/static/media/logoZhaz.f38c25782706b4691aa2.png",
     "index.html": "/index.html",
-    "main.942478fe.css.map": "/static/css/main.942478fe.css.map",
-    "main.7f5c4e63.js.map": "/static/js/main.7f5c4e63.js.map"
+    "main.890e36a7.css.map": "/static/css/main.890e36a7.css.map",
+    "main.6b477edd.js.map": "/static/js/main.6b477edd.js.map"
   },
   "entrypoints": [
-    "static/css/main.942478fe.css",
-    "static/js/main.7f5c4e63.js"
+    "static/css/main.890e36a7.css",
+    "static/js/main.6b477edd.js"
   ]
 }
