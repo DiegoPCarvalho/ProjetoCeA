@@ -10,7 +10,7 @@ export default function Login() {
         <div className="login">
             <div className="formLogin">
                 <div className="d-flex flex-row tamanho">
-                    <div className="imagem w-50 d-flex justify-content-center align-items-center rounded-start">
+                    <div className="imagem2 w-50 d-flex justify-content-center align-items-center rounded-start">
                         <img src={cea} alt="" />
                     </div>
                     <div className="h-100 w-50 transparencia rounded-end">
