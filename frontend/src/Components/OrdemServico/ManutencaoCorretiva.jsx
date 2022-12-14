@@ -4,10 +4,6 @@ import './GeralOrdem.css';
 import LogoCeA from '../../Assets/Imgs/logoCeA.png';
 import { Link } from 'react-router-dom';
 
-
-import "jquery/dist/jquery.min.js";
-import "datatables.net-dt/js/dataTables.dataTables";
-import "datatables.net-dt/css/jquery.dataTables.min.css";
 import $ from 'jquery';
 
 const headerProps = {
@@ -17,7 +13,7 @@ const headerProps = {
 
 export default class ManutencaoCorretiva extends Component {
 
-    componentDidMount() {
+    componentWillMount() {
         $(document).ready(function () {
           setTimeout(() => {
             $('#table_id').DataTable({
@@ -194,7 +190,7 @@ export default class ManutencaoCorretiva extends Component {
                 <div className='container-fluid'>
                     <div className="row">
                         <div className="col-6 col-md-3 imagem">
-                            <a href='/Avulso'><img src={LogoCeA} alt="" /></a>
+                            <img src={LogoCeA} alt="" />
                         </div>
                         <div className="col-6 col-md-3 text-light d-flex justify-content-center align-items-start">
                             <div className='bg-success rounded w-50'>
@@ -206,7 +202,7 @@ export default class ManutencaoCorretiva extends Component {
                             {this.renderEstagio()}
                         </div>
                         <div className="col-6 col-md-1 d-flex justify-content-end align-items-start">
-                            <Link to="/MpAvulso" className='btn btn-danger'>Voltar</Link>
+                            <Link to="/OrdemServico/MpAvulso" className='btn btn-danger'>Voltar</Link>
                         </div>
                     </div>
                     <div className="row">

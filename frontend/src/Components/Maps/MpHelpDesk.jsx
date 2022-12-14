@@ -17,7 +17,7 @@ export default class MpAtendimento extends Component {
                 </div>
                 <div className="row">
                     <div className="col-12 col-md-6">
-                        <MapasAtendimento end="HelpDesk"/>
+                        <MapasAtendimento end="OrdemServico/HelpDesk"/>
                     </div>
                     <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
                         <div>

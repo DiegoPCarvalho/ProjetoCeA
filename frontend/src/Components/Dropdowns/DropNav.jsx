@@ -7,22 +7,22 @@ export default props =>
 <div id="accordian">
 <ul className="show-dropdown">
     <li>
-        <Link to="/DashboardGeral" className='text-light'><i className="fa fa-bar-chart"></i>Dashboard</Link>
+        <Link to="/Dashboard" className='text-light'><i className="fa fa-bar-chart"></i>Dashboard</Link>
         <ul>
-            <li><Link to="/DashboardGeral" className='text-light'><i className="fa fa-database"></i>Geral</Link></li>
-            <li><Link to="/DashboardAtendimentoOnSite" className='text-light'><i className="fa fa-plane"></i>Atendimento On-site</Link></li>
-            <li><Link to="/DashboardContrato" className='text-light'><i className="fa fa-university"></i>Contrato</Link></li>
-            <li><Link to="/DashboardAvulso" className='text-light'><i className="fa fa-fort-awesome"></i>Avulso</Link></li>
-            <li><Link to="/DashboardHelpDesk" className='text-light'><i className="fa fa-info-circle"></i>Atendimento Help Desk</Link></li>
+            <li><Link to="/Dashboard" className='text-light'><i className="fa fa-database"></i>Geral</Link></li>
+            <li><Link to="/Dashboard/AtendimentoOnSite" className='text-light'><i className="fa fa-plane"></i>Atendimento On-site</Link></li>
+            <li><Link to="/Dashboard/Contrato" className='text-light'><i className="fa fa-university"></i>Contrato</Link></li>
+            <li><Link to="/Dashboard/Avulso" className='text-light'><i className="fa fa-fort-awesome"></i>Avulso</Link></li>
+            <li><Link to="/Dashboard/HelpDesk" className='text-light'><i className="fa fa-info-circle"></i>Atendimento Help Desk</Link></li>
         </ul>
     </li>
     <li>
-        <a href="javascript:void(0);" className='text-light'><i className="fa fa-clone"></i>Ordem de Serviço</a>
+        <Link to="/OrdemServico" className='text-light'><i className="fa fa-clone"></i>Ordem de Serviço</Link>
         <ul>
-            <li><Link to="/MpAtendimento" className='text-light'><i className="fa fa-plane"></i>Atendimento On-site</Link></li>
-            <li><Link to="/MpContrato" className='text-light'><i className="fa fa-university"></i>Contrato</Link></li>
-            <li><Link to="/MpAvulso" className='text-light'><i className="fa fa-fort-awesome"></i>Avulso</Link></li>
-            <li><Link to="/MpHelpDesk" className='text-light'><i className="fa fa-info-circle"></i>Atendimento Help Desk</Link></li>
+            <li><Link to="/OrdemServico/MpAtendimento" className='text-light'><i className="fa fa-plane"></i>Atendimento On-site</Link></li>
+            <li><Link to="/OrdemServico/MpContrato" className='text-light'><i className="fa fa-university"></i>Contrato</Link></li>
+            <li><Link to="/OrdemServico/MpAvulso" className='text-light'><i className="fa fa-fort-awesome"></i>Avulso</Link></li>
+            <li><Link to="/OrdemServico/MpHelpDesk" className='text-light'><i className="fa fa-info-circle"></i>Atendimento Help Desk</Link></li>
         </ul>
     </li>
     <li>
@@ -42,7 +42,7 @@ export default props =>
         <li>
             <a href="javascript:void(0);" className='text-light'><i class="fa fa-address-book"></i>Usuario</a>
             <ul>
-                <li><a href="http://192.168.15.211:3000/" className='text-light'><i className="fa fa-sign-out"></i>Sair</a></li>
+                <li><Link to="/" className='text-light'><i className="fa fa-sign-out"></i>Sair</Link></li>
             </ul>
         </li>
     {/* <li>

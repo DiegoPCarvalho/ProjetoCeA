@@ -2,7 +2,8 @@ import React from 'react';
 import './Mapas.css';
 import { Link } from 'react-router-dom';
 
-export default props =>
+export default function Mapa(props) {
+	return(
 	<div>
 		<svg xmlns="http://www.w3.org/2000/svg" class="mapa-svg-estados-svg" width="802" height="642"
 			viewBox="0 0 802 642" clas>
@@ -173,3 +174,5 @@ export default props =>
 		</svg>
 
 	</div>
+	)
+}

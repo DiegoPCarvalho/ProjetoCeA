@@ -205,19 +205,19 @@ export default class DashboardGeral extends Component {
                     <div className='row mt-4'>
                         <div className="col-6 col-md-3  d-flex justify-content-center">
                           <ModalGeral corModal="primary" relatorio={this.renderGrafico2('column')} nome="Atendimento On-Site" estilo={{height: 200, width: 400}}
-                              link={<Link to="/DashboardAtendimentoOnSite" className={`btn btn-primary fw-bold`}>Relatório</Link>} />
+                              link={<Link to="/Dashboard/AtendimentoOnSite" className={`btn btn-primary fw-bold`}>Relatório</Link>} />
                         </div>
                         <div className="col-6 col-md-3 d-flex justify-content-center">
                             <ModalGeral corModal="dark" relatorio={this.renderGrafico2('area')} nome="Contrato" estilo={{height: 200, width: 400}} 
-                                 link={<Link to="/DashboardContrato" className={`btn btn-dark fw-bold`}>Relatório</Link>}/>
+                                 link={<Link to="/Dashboard/Contrato" className={`btn btn-dark fw-bold`}>Relatório</Link>}/>
                         </div>
                         <div className="col-6 col-md-3 d-flex justify-content-center">
                             <ModalGeral corModal="success" relatorio={this.renderGrafico()} nome="Avulso" estilo={{height: 200, width: 400}}
-                               link={<Link to="/DashboardAvulso" className={`btn btn-success fw-bold`}>Relatório</Link>} />
+                               link={<Link to="/Dashboard/Avulso" className={`btn btn-success fw-bold`}>Relatório</Link>} />
                         </div>
                         <div className="col-6 col-md-3  d-flex justify-content-center">
                             <ModalGeral corModal="warning" relatorio={this.renderGrafico2()} nome="Help Desk" estilo={{height: 200, width: 400}}
-                                link={<Link to="/DashboardHelpDesk" className={`btn btn-warning text-light fw-bold`}>Relatório</Link>}/>
+                                link={<Link to="/Dashboard/HelpDesk" className={`btn btn-warning text-light fw-bold`}>Relatório</Link>}/>
                         </div>
                     </div>
                 </div>

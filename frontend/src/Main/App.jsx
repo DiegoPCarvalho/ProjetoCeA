@@ -1,25 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
-import './App.css';
+import "jquery/dist/jquery.min.js";
+import "datatables.net-dt/js/dataTables.dataTables";
+import "datatables.net-dt/css/jquery.dataTables.min.css";
 import React from 'react';
-
-import {BrowserRouter} from 'react-router-dom';
-
-import Logo from '../Components/Template/Logo';
-import Nav from '../Components/Template/Nav';
 import Routes from './Router';
-import Footer from '../Components/Template/Footer';
 
 
-export default props => 
-<BrowserRouter>
-    <div className='App'>
-        <Logo />
-        <Nav />
-        <Routes />
-        <Footer />
-    </div>
-</BrowserRouter>
-
-
-
+export default function App() {
+    return(
+        <div className='app'>
+            <Routes />
+        </div>
+    )
+}

@@ -22,28 +22,35 @@ import MpContrato from "../Components/Maps/MapContrato";
 import MpAvulso from '../Components/Maps/MapAvulso';
 import MpHelpDesk from '../Components/Maps/MpHelpDesk';
 
-//login
 
-import Tabela from '../Components/Tabela/TabelaDinamica';
+//Login
+import Login from '../Login/Login';
+
+//Home
+import Home from '../Home/Home';
 
 
 export default props => (
     <Routes>
-        <Route path="/DashboardGeral" element={<DashboardGeral />} />
-        <Route path="/DashboardAtendimentoOnSite" element={<DashAtendimentoOnSite />} />
-        <Route path="/DashboardContrato" element={<DashboardContrato />} />
-        <Route path="/DashboardAvulso" element={<DashboardManutencaoCorretiva />} />
-        <Route path="/DashboardHelpDesk" element={<DashboardSuporteRemoto />} />
-        <Route path="/AtendimentoOnSite" element={<AtendimentoOnSite/>} />
-        <Route path="/Contrato" element={<Contrato/>} />
-        <Route path="/Avulso" element={<ManutencaoCorretiva/>} />
-        <Route path="/HelpDesk" element={<SuporteRemoto/>} />
-        <Route path="*" element={<DashboardGeral />} />
-        {/* Mapas */}
-        <Route path="/MpAtendimento" element={<MpAtendimento />} />
-        <Route path="/MpContrato" element={<MpContrato />} />
-        <Route path="/MpAvulso" element={<MpAvulso />} />
-        <Route path="/MpHelpDesk" element={<MpHelpDesk />} />
-        <Route path="/login" element={<Tabela />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/Dashboard" element={<Home />}>
+            <Route index element={<DashboardGeral />} />
+            <Route path="AtendimentoOnSite" element={<DashAtendimentoOnSite />} />
+            <Route path="Contrato" element={<DashboardContrato />} />
+            <Route path="Avulso" element={<DashboardManutencaoCorretiva />} />
+            <Route path="HelpDesk" element={<DashboardSuporteRemoto />} />
+        </Route>
+        <Route path="/OrdemServico" element={<Home />}>
+            <Route index element={<DashboardGeral />} />
+            <Route path="MpAtendimento" element={<MpAtendimento />}/>
+            <Route path="AtendimentoOnSite" element={<AtendimentoOnSite/>} />
+            <Route path="MpContrato" element={<MpContrato />} />
+            <Route path="Contrato" element={<Contrato />} />
+            <Route path="MpAvulso" element={<MpAvulso />} />
+            <Route path="Avulso" element={<ManutencaoCorretiva/>} />
+            <Route path="MpHelpDesk" element={<MpHelpDesk />} />
+            <Route path="HelpDesk" element={<SuporteRemoto/>} />
+        </Route>
+        <Route path="*" element={<Login />} />
     </Routes>
 );
