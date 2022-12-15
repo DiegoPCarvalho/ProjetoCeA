@@ -92,3 +92,6 @@ function dataCerta(dia){
 }
 
 console.log(diferenca("12/12/2022"))
+
+
+https://datatables.net/extensions/buttons/examples/initialisation/export.html

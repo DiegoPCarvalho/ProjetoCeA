@@ -14,14 +14,33 @@ const headerProps = {
 export default class Contrato extends Component {
 
     componentWillMount() {
+        // $(document).ready(function () {
+        //   setTimeout(() => {
+        //     $('#table_id').DataTable({
+        //       language: { url: '//cdn.datatables.net/plug-ins/1.11.1/i18n/pt_br.json', },
+        //     });
+        //   }, 1)
+        // });
         $(document).ready(function () {
           setTimeout(() => {
             $('#table_id').DataTable({
               language: { url: '//cdn.datatables.net/plug-ins/1.11.1/i18n/pt_br.json', },
+              dom: 'Bfrtip',
+                buttons: [
+                    'csv', 'excel', 'print'
+                ]
             });
           }, 1)
         });
-      }
+        // $(document).ready(function () {
+        //     $('#example').DataTable({
+        //         dom: 'Bfrtip',
+        //         buttons: [
+        //             'copy', 'csv', 'excel', 'pdf', 'print'
+        //         ]
+        //     });
+        // });
+    }
     renderTable() {
         return (
             <table className="table table-bordered mt-5" id="table_id">
